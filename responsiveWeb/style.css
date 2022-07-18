@@ -1,0 +1,168 @@
+html {
+  font-size: 10px;
+  scroll-behavior: smooth;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+hr {
+  margin: 2rem 0;
+}
+p {
+  font-size: 1.4rem;
+}
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+.header {
+  padding: 6rem;
+  text-align: center;
+  font-weight: bold;
+  background-color: #61dbfb;
+}
+.header .header_title {
+  font-size: 4rem;
+  color: white;
+  animation: float 3s linear infinite;
+  animation-direction: alternate;
+  text-shadow: 0.5rem 0.5rem 0px #555555;
+}
+
+@keyframes float {
+  from {
+    transform: rotate(3deg);
+  }
+  to {
+    transform: rotate(-3deg);
+  }
+}
+
+.nav {
+  display: flex;
+  justify-content: center;
+  background-color: black;
+  position: sticky;
+  top: 0;
+}
+
+.nav > a {
+  padding: 1rem 2rem;
+  color: white;
+  font-size: 1.6rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: all ease-out 0.3s;
+}
+
+.nav > a:hover {
+  transform: scale(1.2) skew(-5deg);
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.logo img {
+  width: 12rem;
+  height: 12rem;
+}
+
+.lan_logo img {
+  width: 7rem;
+  height: 7rem;
+}
+
+.aside {
+  flex: 20%;
+  background-color: #fb8161;
+  text-align: center;
+  padding: 1rem;
+}
+.aside .about h2 {
+  text-align: start;
+  margin: 1.2rem 0;
+}
+.aside * {
+  padding: 0.7rem;
+}
+.aside .about .warning {
+  color: white;
+  font-size: 1.2rem;
+}
+
+.aside .about img {
+  transition: all ease-out 0.3s;
+}
+
+.aside .about img:hover {
+  transform: scale(1.15);
+}
+
+.main {
+  flex: 80%;
+  padding: 2rem;
+  background-color: #bff0fd;
+}
+.main .title p {
+  font-size: 3rem;
+  font-weight: bold;
+}
+section {
+  margin-top: 2.5rem;
+}
+section h1 {
+  font-size: 3rem;
+  margin-bottom: 1.2rem;
+}
+section h5 {
+  font-size: 2rem;
+}
+.interactive {
+  background-color: var(--background-secondary);
+  border: 1px solid var(--border-primary);
+  border-radius: var(--elem-radius);
+  color: var(--text-primary);
+  height: 40rem;
+  margin: 1rem 0;
+  padding: 0;
+  width: 100%;
+}
+
+section .ref {
+  margin: 1.5rem 0;
+  font-size: 1.8rem;
+}
+
+section .ref_link {
+  font-size: 1.6rem;
+}
+.footer {
+  background-color: #61dbfb;
+  font-size: 1.6rem;
+  text-align: center;
+  color: white;
+  padding: 2rem;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 768px) {
+  html {
+    font-size: 7px;
+  }
+  .row {
+    flex-direction: column;
+  }
+  .aside .about h2 {
+    text-align: center;
+    font-size: 1.5rem;
+  }
+}

@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Bootcamp Review</title>
+	<!-- Google Font -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
+	<!-- External CSS -->
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+	<!-- header -->
+	<header class="header">
+		<p class="header_title">Bootcamp QUICK Review</p>
+	</header>
+	<!-- nav -->
+	<nav class="nav">
+		<a href="#html_title">HTML</a>
+		<a href="#css_title">CSS</a>
+		<a href="#js_title">JavaScript</a>
+		<a href="#bootstrap_title">BootStrap</a>
+		<a href="#vue_title">Vue</a>
+	</nav>
+	<!-- contents -->
+	<div class="row">
+		<!-- side -->
+		<aside class="aside">
+			<div class="about">
+				<h2>About</h2>
+				<div class="logo">
+					<a href="https://www.youtube.com/c/%EA%B0%9C%EB%B0%9C%EC%9E%90%EC%9D%98%ED%92%88%EA%B2%A9" target="_blank">
+						<img src="./src/images/Logo.png" alt="개발자의 품격 로고입니다.">
+					</a>
+				</div>
+				<p>이 페이지는 부트캠프를 학습하면서 나왔던 개념을 다시 <strong>"복습"</strong>하기 위해 만들어 졌습니다.</p>
+				<p class="warning">❗ <e>테블릿 사이즈</e>이상의 화면으로 볼 것을 추천합니다.</p>
+				<h2>다시 볼 파트</h2>
+				<p class="warning">❗ 아래 이미지를 누르면 참고 문서로 갑니다.</p>
+
+				<div class="lan_logo">
+					<a href="https://developer.mozilla.org/ko/docs/Web/HTML" target="_blank">
+						<img src="./src/images/htmlLogo.png" alt="HTML 로고 입니다.">
+					</a>
+				</div>
+				<div class="lan_logo">
+					<a href="https://developer.mozilla.org/ko/docs/Web/CSS" target="_blank">
+						<img src="./src/images/cssLogo.png" alt="CSS 로고 입니다.">
+					</a>
+				</div>
+				<div class="lan_logo">
+					<a href="https://developer.mozilla.org/ko/docs/Web/JavaScript" target="_blank">
+						<img src="./src/images/javascriptLogo.png" alt="Javascript 로고 입니다.">
+					</a>
+				</div>
+				<div class="lan_logo">
+					<a href="https://getbootstrap.com/" target="_blank">
+						<img src="./src/images/Bootstrap_logo.png" alt="부트스랩 로고 입니다.">
+					</a>
+				</div>
+				<div class="lan_logo">
+					<a href="https://vuejs.org/" target="_blank">
+						<img src="./src/images/Vue.js_Logo.png" alt="Vue 로고 입니다.">
+					</a>
+				</div>
+			</div>
+		</aside>
+		<!-- main -->
+		<main class="main">
+			<!-- html part -->
+			<div class="title" id="html_title">
+				<p>HTML</p>
+			</div>
+			<section>
+				<h1>〈li〉</h1>
+				<h5>목록 태그</h5>
+				<div>
+					<iframe class="interactive" height="200"
+						src="https://interactive-examples.mdn.mozilla.net/pages/tabbed/li.html"
+						title="MDN Web Docs Interactive Example" loading="lazy"></iframe>
+				</div>
+				<p>HTML li 요소는 목록의 항목을 나타냅니다. 순서 정렬 목록은 ol, 비순서 정렬 목록은 ul이 있습니다.</p>
+				<h5 class="ref">참고</h5>
+				<p class="ref_link">
+					<a href="https://developer.mozilla.org/ko/docs/Web/HTML/Element/li" target="_blank">MDN 〈li〉</a> 👈바로가기
+				</p>
+				<hr>
+			</section>
+
+			<section>
+				<h1>〈table〉</h1>
+				<h5>테이블 태그</h5>
+				<div>
+					<iframe class="interactive" height="200"
+						src="https://interactive-examples.mdn.mozilla.net/pages/tabbed/table.html"
+						title="MDN Web Docs Interactive Example" loading="lazy"></iframe>
+				</div>
+				<p>HTML table 요소는 행과 열로 이루어진 표를 나타냅니다.</p>
+				<h5 class="ref">참고</h5>
+				<p class="ref_link">
+					<a href="https://developer.mozilla.org/ko/docs/Web/HTML/Element/table" target="_blank">MDN 〈table〉</a> 👈바로가기
+				</p>
+				<hr>
+			</section>
+
+			<section>
+				<h1>〈form〉</h1>
+				<h5>폼 태그</h5>
+				<div>
+					<iframe class="interactive" height="200"
+						src="https://interactive-examples.mdn.mozilla.net/pages/tabbed/form.html"
+						title="MDN Web Docs Interactive Example" loading="lazy"></iframe>
+				</div>
+				<p>HTML form 요소는 정보를 제출하기 위한 대화형 컨트롤을 포함하는 문서 구획을 나타냅니다.</p>
+				<h5 class="ref">참고</h5>
+				<p class="ref_link">
+					<a href="https://developer.mozilla.org/ko/docs/Web/HTML/Element/form" target="_blank">MDN 〈form〉</a> 👈바로가기
+				</p>
+				<hr>
+			</section>
+
+			<section>
+				<h1>〈input〉</h1>
+				<h5>인풋 태그</h5>
+				<div>
+					<iframe class="interactive" height="200"
+						src="https://interactive-examples.mdn.mozilla.net/pages/tabbed/input-text.html"
+						title="MDN Web Docs Interactive Example" loading="lazy"></iframe>
+				</div>
+				<p>HTML input 요소는 사용자의 데이터를 받아들이기 위해 웹 기반 양식에 대한 대화형 컨트롤을 만드는 데 사용됩니다.</p>
+				<h5 class="ref">참고</h5>
+				<p class="ref_link">
+					<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input" target="_blank">MDN
+						input</a> 👈바로가기
+				</p>
+				<hr>
+			</section>
+
+			<section>
+				<h1>〈input type="checkbox"〉</h1>
+				<h5>인풋 체크박스 태그</h5>
+				<div>
+					<iframe class="interactive" height="200"
+						src="https://interactive-examples.mdn.mozilla.net/pages/tabbed/input-checkbox.html"
+						title="MDN Web Docs Interactive Example" loading="lazy"></iframe>
+				</div>
+				<p>HTML form 요소는 정보를 제출하기 위한 대화형 컨트롤을 포함하는 문서 구획을 나타냅니다.</p>
+				<h5 class="ref">참고</h5>
+				<p class="ref_link">
+					<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/checkbox" target="_blank">MDN
+						checkbox</a> 👈바로가기
+				</p>
+				<hr>
+			</section>
+
+			<section>
+				<h1>〈input type="radio"〉</h1>
+				<h5>인풋 라디오 태그</h5>
+				<div>
+					<iframe class="interactive" height="200"
+						src="https://interactive-examples.mdn.mozilla.net/pages/tabbed/input-radio.html"
+						title="MDN Web Docs Interactive Example" loading="lazy"></iframe>
+				</div>
+				<p>임의의 그룹 내에서는 동시에 하나의 라디오 버튼만 선택할 수 있습니다. 라디오 버튼은 흔히 원형으로 그려지며, 선택한 경우 속을 채우거나 강조 표시를 합니다.</p>
+				<h5 class="ref">참고</h5>
+				<p class="ref_link">
+					<a href="https://developer.mozilla.org/ko/docs/Web/HTML/Element/Input/radio" target="_blank">MDN
+						radio</a> 👈바로가기
+				</p>
+				<hr>
+			</section>
+
+			<section>
+				<h1>〈input type="week"〉</h1>
+				<h5>인풋 주일 태그</h5>
+				<div>
+					<iframe class="interactive" height="200"
+						src="https://interactive-examples.mdn.mozilla.net/pages/tabbed/input-week.html"
+						title="MDN Web Docs Interactive Example" loading="lazy"></iframe>
+				</div>
+				<p>input 요소의 week 타입은 1년 중에 해당 일이 몇 번째 주인지 알려줍니다. (1 ~ 52or53주)</p>
+				<h5 class="ref">참고</h5>
+				<p class="ref_link">
+					<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/week" target="_blank">MDN
+						week</a> 👈바로가기
+				</p>
+				<hr>
+			</section>
+
+			<section>
+				<h1>〈input type="color"〉</h1>
+				<h5>인풋 컬러 태그</h5>
+				<div>
+					<iframe class="interactive" height="200"
+						src="https://interactive-examples.mdn.mozilla.net/pages/tabbed/input-color.html"
+						title="MDN Web Docs Interactive Example" loading="lazy"></iframe>
+				</div>
+				<p>버튼을 눌러 색상을 선택할 수 있습니다.</p>
+				<h5 class="ref">참고</h5>
+				<p class="ref_link">
+					<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/color" target="_blank">MDN
+						color</a> 👈바로가기
+				</p>
+				<hr>
+			</section>
+
+			<section>
+				<h1>〈select〉</h1>
+				<h5>설렉트 태그</h5>
+				<div>
+					<iframe class="interactive" height="200"
+						src="https://interactive-examples.mdn.mozilla.net/pages/tabbed/select.html"
+						title="MDN Web Docs Interactive Example" loading="lazy"></iframe>
+				</div>
+				<p>HTML select 요소는 옵션 메뉴를 제공하는 컨트롤을 나타냅니다.</p>
+				<h5 class="ref">참고</h5>
+				<p class="ref_link">
+					<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select" target="_blank">MDN
+						select</a> 👈바로가기
+				</p>
+				<hr>
+			</section>
+
+			<section>
+				<h1>〈textarea〉</h1>
+				<h5>텍스트영역 태그</h5>
+				<div>
+					<iframe class="interactive" height="200"
+						src="https://interactive-examples.mdn.mozilla.net/pages/tabbed/textarea.html"
+						title="MDN Web Docs Interactive Example" loading="lazy"></iframe>
+				</div>
+				<p>HTML textarea 요소는 다중 줄 일반 텍스트 편집 컨트롤을 나타냅니다.</p>
+				<h5 class="ref">참고</h5>
+				<p class="ref_link">
+					<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea" target="_blank">MDN
+						textarea</a> 👈바로가기
+				</p>
+				<hr>
+			</section>
+
+			<section>
+				<h1>〈fieldset〉</h1>
+				<h5>필드셋 태그</h5>
+				<div>
+					<iframe class="interactive" height="200"
+						src="https://interactive-examples.mdn.mozilla.net/pages/tabbed/fieldset.html"
+						title="MDN Web Docs Interactive Example" loading="lazy"></iframe>
+				</div>
+				<p>HTML fieldset 요소는 웹 양식 냐에서 여러 컨트롤과 레이블(label)을 그룹화 하는 데 사용합니다.</p>
+				<h5 class="ref">참고</h5>
+				<p class="ref_link">
+					<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/fieldset" target="_blank">MDN
+						fieldset</a> 👈바로가기
+				</p>
+				<hr>
+			</section>
+
+			<section>
+				<h1>〈datalist〉</h1>
+				<h5>데이터리스트 태그</h5>
+				<div>
+					<iframe class="interactive" height="200"
+						src="https://interactive-examples.mdn.mozilla.net/pages/tabbed/datalist.html"
+						title="MDN Web Docs Interactive Example" loading="lazy"></iframe>
+				</div>
+				<p>HTML datalist 요소에는 다른 컨트롤 내에서 선택할 수 있는 허용되거나 권장되는 옵션을 나타내는 option 요소 집합이 포함되어 있습니다.</p>
+				<h5 class="ref">참고</h5>
+				<p class="ref_link">
+					<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/datalist" target="_blank">MDN
+						datalist</a> 👈바로가기
+				</p>
+				<hr>
+			</section>
+
+			<section>
+				<h1>〈iframe〉</h1>
+				<h5>아이프레임 태그</h5>
+				<div>
+					<iframe class="interactive" height="200"
+						src="https://interactive-examples.mdn.mozilla.net/pages/tabbed/iframe.html"
+						title="MDN Web Docs Interactive Example" loading="lazy"></iframe>
+				</div>
+				<p>HTML iframe 요소는 중첩된 검색 컨텍스트를 나타내며, 현재 HTML 페이지에 다른 HTML 페이지를 포함합니다.</p>
+				<h5 class="ref">참고</h5>
+				<p class="ref_link">
+					<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe" target="_blank">MDN
+						iframe</a> 👈바로가기
+				</p>
+				<hr>
+			</section>
+
+			<section>
+				<h1>〈video〉</h1>
+				<h5>비디오 태그</h5>
+				<div>
+					<iframe class="interactive" height="200"
+						src="https://interactive-examples.mdn.mozilla.net/pages/tabbed/video.html"
+						title="MDN Web Docs Interactive Example" loading="lazy"></iframe>
+				</div>
+				<p>HTML video 요소는 비디오 재생을 지원하는 미디어 플레이어를 문서에 내장합니다.</p>
+				<h5 class="ref">참고</h5>
+				<p class="ref_link">
+					<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video" target="_blank">MDN
+						video</a> 👈바로가기
+				</p>
+				<hr>
+			</section>
+
+			<section>
+				<h1>〈map〉</h1>
+				<h5>맵 태그</h5>
+				<div>
+					<iframe class="interactive" height="200"
+						src="https://interactive-examples.mdn.mozilla.net/pages/tabbed/map.html"
+						title="MDN Web Docs Interactive Example" loading="lazy"></iframe>
+				</div>
+				<p>HTML map 요소는 area 요소와 함께 사용되어 이미지 맵(클릭 가능한 링크 영역)을 정의합니다.</p>
+				<h5 class="ref">참고</h5>
+				<p class="ref_link">
+					<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/map" target="_blank">MDN
+						map</a> 👈바로가기
+				</p>
+				<hr>
+			</section>
+
+			<!-- CSS part -->
+			<div class="title" id="css_title">
+				<p>CSS</p>
+			</div>
+
+			<section>
+				<h1>CSS selectors</h1>
+				<h5>CSS 선택자</h5>
+				<div>
+					<iframe width="100%" height="1000" src="https://mdn.github.io/css-examples/learn/selectors/selector-list.html"
+						loading="lazy"></iframe>
+				</div>
+				<p>CSS에서 셀렉터는 우리가 스타일링하고자 하는 웹 페이지의 HTML 요소를 대상으로 하는 데 사용됩니다. 스타일링할 요소를 선택할 때 세밀한 정밀도를 허용하는 매우 다양한 CSS 선택자가
+					있습니다. 아래 참고 링크를 들어가서 더 자세한 내용을 확인해 보세요!</p>
+				<h5 class="ref">참고</h5>
+				<p class="ref_link">
+					<a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Selectors" target="_blank">MDN
+						CSS selectors</a> 👈바로가기
+				</p>
+				<hr>
+			</section>
+
+
+			<section>
+				<h1>CSS color</h1>
+				<h5>CSS 색상 적용하는 방법</h5>
+				<div>
+					<iframe class="interactive" height="200"
+						src="https://interactive-examples.mdn.mozilla.net/pages/css/color.html"
+						title="MDN Web Docs Interactive Example" loading="lazy"></iframe>
+				</div>
+				<p>CSS 색상 값은 색상에 해당하는 키워드, 색상값으로 적용할 수 있습니다. RGBA나 HEX, HSL 로도 색상을 적용할 수 있습니다.</p>
+				<h5 class="ref">참고</h5>
+				<p class="ref_link">
+					<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/color" target="_blank">MDN
+						CSS color</a> 👈바로가기
+				</p>
+				<hr>
+			</section>
+
+			<section>
+				<h1>CSS text-decoration</h1>
+				<h5>CSS 텍스트 꾸미기</h5>
+				<div>
+					<iframe class="interactive" height="200"
+						src="https://interactive-examples.mdn.mozilla.net/pages/css/text-decoration.html"
+						title="MDN Web Docs Interactive Example" loading="lazy"></iframe>
+				</div>
+				<p>CSS text-decoration 속성은 텍스트에 장식 선의 모양을 설정합니다. text-decoration-line, text-decoration-color,
+					text-decoration-style 및 text-decoration-thickness의
+					약어입니다.</p>
+				<h5 class="ref">참고</h5>
+				<p class="ref_link">
+					<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration" target="_blank">MDN
+						CSS text-decoration</a> 👈바로가기
+				</p>
+				<hr>
+			</section>
+
+			<section>
+				<h1>CSS list-style-type</h1>
+				<h5>CSS 리스트 스타일 꾸미기</h5>
+				<div>
+					<iframe class="interactive" height="200"
+						src="https://interactive-examples.mdn.mozilla.net/pages/css/list-style-type.html"
+						title="MDN Web Docs Interactive Example" loading="lazy"></iframe>
+				</div>
+				<p>CSS list-stye-type 속성은 목록 항목 요소의 마커를 설정합니다.</p>
+				<h5 class="ref">참고</h5>
+				<p class="ref_link">
+					<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/list-style-type" target="_blank">MDN
+						CSS list-style-type</a> 👈바로가기
+				</p>
+				<hr>
+			</section>
+
+			<section>
+				<h1>CSS cursor</h1>
+				<h5>CSS 커서 스타일 꾸미기</h5>
+				<div>
+					<iframe class="interactive" height="200"
+						src="https://interactive-examples.mdn.mozilla.net/pages/css/cursor.html"
+						title="MDN Web Docs Interactive Example" loading="lazy"></iframe>
+				</div>
+				<p>CSS cursor 속성은 마우스 포인터가 요소 위에 있을 때를 표시하도록 마우스 커서를 설정합니다.</p>
+				<h5 class="ref">참고</h5>
+				<p class="ref_link">
+					<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/cursor" target="_blank">MDN
+						CSS cursor</a> 👈바로가기
+				</p>
+				<hr>
+			</section>
+
+			<section>
+				<h1>CSS box-sizing</h1>
+				<h5>CSS 박스 사이즈 정하기</h5>
+				<div>
+					<iframe class="interactive" height="200"
+						src="https://interactive-examples.mdn.mozilla.net/pages/css/box-sizing.html"
+						title="MDN Web Docs Interactive Example" loading="lazy"></iframe>
+				</div>
+				<p>CSS box-sizing 속성은 요소의 총 너비와 높이를 계산하는 방법을 설정합니다.</p>
+				<h5 class="ref">참고</h5>
+				<p class="ref_link">
+					<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing" target="_blank">MDN
+						CSS box-sizing</a> 👈바로가기
+				</p>
+				<hr>
+			</section>
+
+			<section>
+				<h1>CSS border</h1>
+				<h5>CSS 경계선 꾸미기</h5>
+				<div>
+					<iframe class="interactive" height="200"
+						src="https://interactive-examples.mdn.mozilla.net/pages/css/border.html"
+						title="MDN Web Docs Interactive Example" loading="lazy"></iframe>
+				</div>
+				<p>CSS border는 요소의 경계를 설정합니다. 이 속성은 border-width, border-style, border-color 속성을 포함합니다. </p>
+				<h5 class="ref">참고</h5>
+				<p class="ref_link">
+					<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border" target="_blank">MDN
+						CSS border</a> 👈바로가기
+				</p>
+				<hr>
+			</section>
+
+			<section>
+				<h1>CSS position</h1>
+				<h5>CSS 포지션 정하기</h5>
+				<div>
+					<iframe class="interactive" height="200"
+						src="https://interactive-examples.mdn.mozilla.net/pages/css/position.html"
+						title="MDN Web Docs Interactive Example" loading="lazy"></iframe>
+				</div>
+				<p>CSS position 속성은 문서에서 요소가 어떻게 위치할지를 정합니다. top, right, bottom, left 속성은 위치하는 요소의 최종 배치를 결정합니다. </p>
+				<h5 class="ref">참고</h5>
+				<p class="ref_link">
+					<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/position" target="_blank">MDN
+						CSS position</a> 👈바로가기
+				</p>
+				<hr>
+			</section>
+
+			<section>
+				<h1>CSS overflow</h1>
+				<h5>CSS 넘치는 요소 처리하기</h5>
+				<div>
+					<iframe class="interactive" height="200"
+						src="https://interactive-examples.mdn.mozilla.net/pages/css/overflow.html"
+						title="MDN Web Docs Interactive Example" loading="lazy"></iframe>
+				</div>
+				<p>CSS overflow 속성은 요소의 흘러넘치는 부분을 원하는 설정으로 만듭니다. 요소안의 내용이 흘러넘치는걸 막거나 흘러넘치게 둡니다.</p>
+				<h5 class="ref">참고</h5>
+				<p class="ref_link">
+					<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/overflow" target="_blank">MDN
+						CSS overflow</a> 👈바로가기
+				</p>
+				<hr>
+			</section>
+
+			<section>
+				<h1>CSS Flexible Box Layout</h1>
+				<h5>CSS 유연한 박스 배치 (flex)</h5>
+				<div>
+					<iframe width="100%" height="600" src="https://mdn.github.io/css-examples/flexbox/basics/simple-example.html"
+						loading="lazy"></iframe>
+				</div>
+				<p>CSS flex는 사용자 인터페이스 설계와 1차원 레이아웃에 최적화된 CSS 박스 모델입니다.</p>
+				<h5 class="ref">참고</h5>
+				<p class="ref_link">
+					<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout" target="_blank">MDN
+						CSS Flexible Box Layout</a> 👈바로가기
+				</p>
+				<hr>
+			</section>
+
+			<!-- JS part -->
+			<div class="title" id="js_title">
+				<p>JavaScript</p>
+			</div>
+			<section>
+				<div>Comming Soon ...</div>
+				<hr>
+			</section>
+
+			<!-- BootStrap part -->
+			<div class="title" id="bootstrap_title">
+				<p>Bootstrap</p>
+			</div>
+			<section>
+				<div>Comming Soon ...</div>
+				<hr>
+			</section>
+
+			<!-- Vue part -->
+			<div class="title" id="vue_title">
+				<p>Vue</p>
+			</div>
+			<section>
+				<div>Comming Soon ...</div>
+				<hr>
+			</section>
+		</main>
+	</div>
+	<footer class="footer">Copyight Harimad 2022</footer>
+
+	<script></script>
+</body>
+
+</html>
