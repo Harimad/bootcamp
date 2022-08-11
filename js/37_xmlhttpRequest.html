@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>XMLHttpRequest & json-server</title>
+</head>
+
+<body>
+	<button onclick="postData()">생성</button>
+	<button onclick="putData()">수정</button>
+	<button onclick="deleteData()">삭제</button>
+	<script>
+		// GET
+		function getPostData() {
+			const xhr = new XMLHttpRequest();
+
+			xhr.open("GET", "http://localhost:3000/posts");
+			xhr.setRequestHeader("content-type", "application/json");
+			xhr.send();
+
+			xhr.onload = () => {
+				if (xhr.status === 200) {
+					const res = JSON.parse(xhr.response);
+					console.log(res);
+				} else {
+					console.log(xhr.status, xhr.statusText);
+				}
+			}
+		}
+
+		getPostData();
+
+		// POST
+		function postData() {
+			const xhr = new XMLHttpRequest();
+			xhr.open("POST", "http://localhost:3000/posts");
+			xhr.setRequestHeader("content-type", "application/json; charset=UTF-8")
+
+			const data = { title: 'JavaScript', author: 'John Doe' };
+			xhr.send(JSON.stringify(data));
+
+			xhr.onload = () => {
+				if (xhr.status === 201) {
+					const res = JSON.parse(xhr.response);
+					console.log(res);
+				} else {
+					console.log(xhr.status, xhr.statusText);
+				}
+			}
+		}
+
+		// PUT
+		function putData() {
+			const xhr = new XMLHttpRequest();
+			xhr.open("PUT", "http://localhost:3000/posts/2");
+			xhr.setRequestHeader("content-type", "application/json; charset=UTF-8");
+			const data = { title: "HTML", author: "Heung Min SON" };
+			xhr.send(JSON.stringify(data));
+
+			xhr.onload = () => {
+				if (xhr.status === 200) {
+					const res = JSON.parse(xhr.response);
+					console.log(res);
+				} else {
+					console.log(xhr.status, xhr.statusText);
+				}
+			}
+		}
+		// DELETE
+		function deleteData() {
+			const xhr = new XMLHttpRequest();
+
+			xhr.open("DELETE", "http://localhost:3000/posts/2");
+			xhr.getResponseHeader("content-type", "application/json; charset=UTF-8")
+			xhr.send();
+
+			xhr.onload = () => {
+				if (xhr.status === 200) {
+					const res = JSON.parse(xhr.response);
+					console.log(res);
+				} else {
+					console.log(xhr.status, xhr.statusText);
+				}
+			}
+		}
+	</script>
+</body>
+
+</html>
