@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		.parent-parent {
+			border: 4px dashed green;
+		}
+
+		.parent {
+			border: 4px dotted blue;
+			margin: 10px;
+			padding: 10px;
+		}
+
+		.child {
+			border: 4px solid red;
+			margin: 10px;
+			padding: 10px;
+		}
+
+	</style>
+</head>
+
+<body>
+	<div class="parent" onclick="console.log('div 이벤트 실행')">
+		<p class="child">
+			p 태그를 클릭해도 상위 div에 할당된 이벤트가 실행됩니다.
+		</p>
+	</div>
+	<br><br><br>
+
+	<div class="parent-parent" onclick="parentParentFunction()" id="1">
+		DIV 이벤트 실행
+		<div class="parent" id="2">
+			div 이벤트 실행 및 버블링
+			<p class="child" onclick="childFunction()" id="3">p 이벤트 실행 및 버블링</p>
+		</div>
+	</div>
+
+	<script>
+		function childFunction() {
+			console.log(event.path);
+			console.log(event.target.id);
+			event.stopPropagation();
+		}
+
+		function parentParentFunction() {
+			console.log(`parentParentFunction ${event.target.id}`);
+		}
+	</script>
+</body>
+
+</html>
