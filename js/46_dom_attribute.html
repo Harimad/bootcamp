@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>45_dom_element</title>
+</head>
+
+<body>
+	<div>
+		<label for="userName">What's your name?(*)</label>
+		<input type="text" name="" id="userName" onkeyup="checkRequired();">
+	</div>
+	<label for="selectLanguage">Your most favorite Programming Language ?</label>
+	<select name="" id="selectLanguage" value="">
+		<option value="HTML">HTML</option>
+		<option value="CSS">CSS</option>
+		<option value="JS">JavaScript</option>
+	</select>
+	<button onclick="doSave();" id="btnSave" disabled>SAVE</button>
+	<button onclick="setLang();">SET</button>
+
+	<script>
+		const $ = tag => document.querySelector(tag);
+		function doSave() {
+			// 버튼 비활성화
+			$('#btnSave').disabled = true;
+			if ($('#userName').value === '') {
+				return alert('Name is Required!');
+			}
+
+			const favoriteLang = $('#selectLanguage').value;
+			console.log(favoriteLang);
+
+			// 서버와 통신하고 응답 받았다고 가정
+			setTimeout(() => {
+				$('#btnSave').disabled = false;
+			}, 2000);
+		}
+
+		function setLang() {
+			$('#selectLanguage').value = 'JS';
+		}
+
+		function checkRequired() {
+			const userNameElement = $('#userName');
+			if (userNameElement.value.length > 0) {
+				$('#btnSave').disabled = false;
+			} else {
+				$('#btnSave').disabled = true;
+			}
+		}
+
+	</script>
+</body>
+
+</html>
