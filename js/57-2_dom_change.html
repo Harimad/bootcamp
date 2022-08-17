@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<label for="sel">From Where?</label>
+	<select name="" id="sel"></select>
+	<br>
+	<h1 id="title">Basic Title</h1>
+	<br>
+
+	<ul id="myUL">
+		<li>Espresso</li>
+		<li>Americano</li>
+		<li>Carmel Ma</li>
+		<li>OrangeJuice</li>
+		<li>CaffeLatte</li>
+	</ul>
+
+	<p id="p1">👋Tag To Be Deleted</p>
+
+	<script>
+		function setCities() {
+			const cities = [
+				{ code: '02', text: 'Seoul' },
+				{ code: '051', text: 'Busan' },
+				{ code: '064', text: 'Jeju' },
+			];
+
+			let optionsHTML = [];
+			for (const city of cities) {
+				optionsHTML.push(
+					`<option value="${city.code}">${city.text}</option>`
+				);
+			}
+
+			document.getElementById('sel').innerHTML = optionsHTML.join('');
+		}
+
+		function setTitle(title = '') {
+			document.getElementById('title').innerText = title;
+		}
+
+		function insertHTML(id, location, htmlStr) {
+			document.getElementById(id).insertAdjacentHTML(location, htmlStr);
+		}
+
+		function removeElement(id) {
+			document.getElementById(id).remove();
+		}
+
+		window.addEventListener('load', function () {
+			setCities();
+			setTimeout(() => { setTitle('🔥Changed Title!') }, 2000);
+			setTimeout(() => { insertHTML('myUL', 'afterbegin', '<li>🔥Milk</li>') }, 3000);
+			setTimeout(() => { insertHTML('myUL', 'beforeend', '<li>🔥Yogurt</li>') }, 4000);
+
+			setTimeout(() => { removeElement('p1') }, 5000);
+		})
+	</script>
+</body>
+
+</html>
