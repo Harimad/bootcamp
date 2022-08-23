@@ -26,17 +26,18 @@
 		</div>
 		<hr>
 		<div id="inventory">
-			<button id="coke">코카콜라(700원, 재고수: <span>5</span>)</button>
-			<button id="orange">오렌지주스(1200원, 재고수: <span>5</span>)</button>
-			<button id="coffee">커피(500원, 재고수: <span>5</span>)</button>
-			<button id="water">물(700원, 재고수: <span>5</span>)</button>
-			<button id="tea">옥수수수염차(1200원, 재고수: <span>5</span>)</button>
-			<button id="milkiss">밀키스(700원, 재고수: <span>5</span>)</button>
-			<button id="trevi">트레비(1000원, 재고수: <span>5</span>)</button>
+			<button class="coke" data-value="700" data-num="0">코카콜라(700원, 재고수: <span id="coke">5</span>)</button>
+			<button class="orange" data-value="1200" data-num="1">오렌지주스(1200원, 재고수: <span id="orange">5</span>)</button>
+			<button class="coffee" data-value="500" data-num="2">커피(500원, 재고수: <span id="coffee">5</span>)</button>
+			<button class="water" data-value="700" data-num="3">물(700원, 재고수: <span id="water">5</span>)</button>
+			<button class="tea" data-value="1200" data-num="4">옥수수수염차(1200원, 재고수: <span id="tea">5</span>)</button>
+			<button class="milkiss" data-value="700" data-num="5">밀키스(700원, 재고수: <span id="milkiss">5</span>)</button>
+			<button class="trevi" data-value="1000" data-num="6">트레비(1000원, 재고수: <span id="trevi">5</span>)</button>
 		</div>
 		<hr>
 		<div class="result">
-			<p><span class="insert"></span>이 투입되었습니다</p>
+			<h3>Message</h3>
+			<p>자판기에는 총<span class="insert">0</span>원이 있습니다.</p>
 			<p>총 투입 금액은 <span class="total">0</span>입니다.</p>
 			<p>당신의 지갑에는 <span class="leftMoney">10000</span>원이 남아 있습니다.</p>
 		</div>
@@ -50,9 +51,9 @@
 		const $hundred = $('#hundred');
 		const $fiveHundred = $('#fiveHundred');
 		const $thousand = $('#thousand');
-		const $insert = $$('.insert');
-		const $total = $$('.total');
-		const $leftMoney = $$('.leftMoney');
+		const $$insert = $$('.insert');
+		const $$total = $$('.total');
+		const $$leftMoney = $$('.leftMoney');
 
 		const $inventory = $('#inventory');
 		const $coke = $('#coke');
@@ -63,38 +64,104 @@
 		const $milkiss = $('#milkiss');
 		const $trevi = $('#trevi');
 
+		// const drinkLists = ['coke', 'orange', 'coffee', 'water', 'tea', 'milkiss', 'trevi'];
+		const leftDrink = [
+			{ coke: Number($coke.innerText) },
+			{ orange: Number($orange.innerText) },
+			{ coffee: Number($coffee.innerText) },
+			{ water: Number($water.innerText) },
+			{ tea: Number($tea.innerText) },
+			{ milkiss: Number($milkiss.innerText) },
+			{ trevi: Number($trevi.innerText) },
+		]
+
 		let insertedMoney = 0;
 		let totalMoney = 10000;
-		$leftMoney[0].value = totalMoney;
+		$$leftMoney[0].value = totalMoney;
+
+		let machineHas = 0;
+		$$insert[0].value = machineHas;
+		$$insert[1].innerText = machineHas;
+
+		function renderLeftDrink() {
+			$coke.innerText = leftDrink[0]['coke'];
+			$orange.innerText = leftDrink[1]['orange'];
+			$coffee.innerText = leftDrink[2]['coffee'];
+			$water.innerText = leftDrink[3]['water'];
+			$tea.innerText = leftDrink[4]['tea'];
+			$milkiss.innerText = leftDrink[5]['milkiss'];
+			$trevi.innerText = leftDrink[6]['trevi'];
+		}
 
 		$coinInsert.addEventListener('click', event => {
-			let dataSetValue = Number(event.target.dataset.value);
+			if (totalMoney >= 100) {
 
-			if (!!dataSetValue) {
-				console.log('데이터셋 있음!');
-				if (totalMoney >= dataSetValue) {
-					//돈 증감
-					insertedMoney += dataSetValue;
-					$total[0].value = insertedMoney;
-					$total[1].innerText = insertedMoney;
+				let dataSetValue = Number(event.target.dataset.value);
 
-					//돈 차감
-					totalMoney -= dataSetValue;
-					$leftMoney[0].value = totalMoney
-					$leftMoney[1].innerText = totalMoney;
+				if (!!dataSetValue) {
+					// console.log('데이터셋 있음!');
+					if (totalMoney >= dataSetValue) {
+						//돈 증가
+						insertedMoney += dataSetValue;
+						$$total[0].value = insertedMoney;
+						$$total[1].innerText = insertedMoney;
+
+						//돈 차감
+						totalMoney -= dataSetValue;
+						$$leftMoney[0].value = totalMoney
+						$$leftMoney[1].innerText = totalMoney;
+					} else {
+						return;
+					}
 				} else {
 					return;
 				}
+				console.log(`insetedMoney: ${insertedMoney}, totalMoney: ${totalMoney}`);
 			} else {
-				console.log('데이터셋 없음!')
-				return;
+				return alert('투입할 돈이 없습니다.')
 			}
-			console.log(`insetedMoney: ${insertedMoney}, totalMoney: ${totalMoney}`);
 		})
 
 		$inventory.addEventListener('click', event => {
-			console.log(event.target)
+			// console.log(event.target.className)
+			// console.dir(event.target)
+			let dataSetValue = Number(event.target.dataset.value);
+			let dataSetNum = Number(event.target.dataset.num);
+			let dataClass = event.target.className;
+			// console.log(dataSetValue);
+			// console.log(dataSetNum, dataClass);
+
+			if (!!dataSetValue) {
+				//투입금액이 음료보다 더 커야 & 재고수가 1개 이상 있어야 실행
+				if (leftDrink[dataSetNum][dataClass] > 0) {
+					if (insertedMoney >= dataSetValue) {
+						//투입금액 차감
+						insertedMoney -= dataSetValue;
+						$$total[0].value = insertedMoney;
+						$$total[1].innerText = insertedMoney;
+
+						//재고수 차감
+						leftDrink[dataSetNum][dataClass] -= 1;
+
+						// 음료 재고 재랜더링
+						renderLeftDrink();
+						console.log(leftDrink);
+
+						//음료자판기 저장 금액 증가
+						machineHas += dataSetValue;
+						$$insert[0].value = machineHas;
+						$$insert[1].innerText = machineHas;
+					} else {
+						return alert('금액이 부족합니다.')
+					}
+				} else {
+					return alert('재고가 부족합니다');
+				}
+			} else {
+				return;
+			}
 		});
+
 	</script>
 </body>
 
