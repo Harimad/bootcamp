@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Starbucks Menu App</title>
+	<style>
+		#classTable {
+			border: 2px solid black;
+		}
+
+		#classTable th,
+		#classTable td,
+		#classTable tr {
+			border: 1px solid cornflowerblue;
+			border-collapse: collapse;
+		}
+
+	</style>
+</head>
+
+<body>
+	<div class="container"></div>
+
+	<script>
+		let menu = [
+			{ id: '1', menu_name: '돌체콜드브루', category: '콜드브루', star: 5 },
+			{ id: '2', menu_name: '콜드 브루', category: '콜드브루', star: 4 },
+			{ id: '3', menu_name: '제주 비자림 콜드 브루', category: '콜드브루', star: 3.5 },
+			{ id: '4', menu_name: '아이스 커피', category: '브루드 커피', star: 2.5 },
+			{ id: '5', menu_name: '오늘의 커피', category: '브루드 커피', star: 2.5 },
+			{ id: '6', menu_name: '카페 아메리카노', category: '에스프레소', star: 5 },
+			{ id: '7', menu_name: '카라멜 마키아또', category: '에스프레소', star: 5 },
+			{ id: '8', menu_name: '자바 칩 프라푸치노', category: '프라푸치노', star: 4.5 },
+			{ id: '9', menu_name: '쿨 서머 캐모마일 블렌디드', category: '블렌디드', star: 3 },
+			{ id: '10', menu_name: '유스베리 로즈 티 브리즈', category: '티', star: 2.5 },
+		]
+
+		let category = new Set();
+		menu.forEach(item => {
+			category.add(item.category);
+		})
+		category = Array.from(category); // (6) ['콜드브루', '브루드 커피', '에스프레소', '프라푸치노', '블렌디드', '티']
+
+		// column key
+		let columns = [];
+		menu.forEach(item => {
+			for (const key in item) {
+				if (columns.indexOf(key) === -1) columns.push(key);
+			}
+		})
+		// console.log(columns); // (4) ['id', 'menu_name', 'category', 'star']
+
+
+		let crudApp = {
+			createTable: () => {
+				let table = document.createElement('table');
+				table.setAttribute('id', 'classTable');
+
+				let tr = table.insertRow(-1);
+
+				columns.forEach(v => {
+					let th = document.createElement('th');
+					th.innerText = v;
+					tr.appendChild(th);
+				})
+
+				// Fill the table
+				for (let i = 0; i < menu.length; i++) {
+					let tr = table.insertRow(-1);
+					for (let j = 0; j < columns.length; j++) {
+						let td = tr.insertCell(-1);
+						td.innerHTML = menu[i][columns[j]];
+						// console.log(menu[i][columns[j]]);
+					}
+
+					td = tr.insertCell(-1);
+					td.innerHTML += `<input type='button' id='Edit${i}' value='수정' onclick='crudApp.Update(this)'/>`;
+					td.innerHTML += `<input type='button' id='Save${i}' value='저장' onclick='crudApp.Save(this)' style='display: none'/>`;
+
+					let td2 = tr.insertCell(-1);
+					td2.innerHTML += `<input type='button' id='Delete${i}' value='삭제' onclick='crudApp.Delete(this)'/>`;
+				}
+
+				// Adding inputs line
+				tr = table.insertRow(-1);
+				for (let i = 0; i < columns.length; i++) {
+					td = tr.insertCell(-1);
+					if (i > 0) {
+						if (i !== 2) {
+							td.innerHTML += `<input type='text' name='${i === 1 ? 'menu_name' : 'star'}'/>`
+						} else {
+							let select = document.createElement('select');
+							for (let j = 0; j < category.length; j++) {
+								select.innerHTML += `<option>${category[j]}</option>`;
+							}
+							td.appendChild(select);
+						}
+					}
+				}
+				td = tr.insertCell(-1);
+				td.innerHTML += `<input type='button' id='Create' value='생성' onclick='crudApp.Create(this)'/>`;
+
+				// Table to Container
+				let container = document.querySelector('.container');
+				container.innerHTML = `Starbuck Menu App`;
+				container.appendChild(table);
+
+				// focus
+				document.querySelector('[name=menu_name]').focus();
+			},
+
+			Create: btn => {
+				let obj = {};
+				let targetIndex = btn.parentNode.parentNode.rowIndex;
+				let tr = document.querySelector('#classTable').rows[targetIndex];
+				// console.log(tr.childNodes);
+				for (let i = 1; i < columns.length; i++) {
+					// console.log(columns[i]);
+					// console.log(tr.childNodes[i].childNodes[0].value);
+					obj[columns[i]] = tr.childNodes[i].childNodes[0].value;
+				}
+				obj[columns[0]] = targetIndex;
+				console.log(obj);
+				menu.push(obj);
+				crudApp.createTable();
+			},
+
+			Delete: btn => {
+				let targetIndex = btn.parentNode.parentNode.rowIndex;
+				console.log(targetIndex);
+				menu.splice(targetIndex - 1, 1);
+				crudApp.createTable();
+			},
+
+			Update: btn => {
+				let targetIdx = btn.parentNode.parentNode.rowIndex;
+				let tr = document.querySelector('#classTable').rows[targetIdx];
+				for (let i = 1; i < columns.length; i++) {
+					// console.log(tr.childNodes[i])
+					// console.dir(tr.childNodes[i].innerText)
+					if (i !== 2) {
+						tr.childNodes[i].innerHTML = `<input value='${tr.childNodes[i].innerText}' />`;
+					} else {
+						let select = document.createElement('select');
+						for (let i = 0; i < category.length; i++) {
+							select.innerHTML += `<option>${category[i]}</option>`;
+						}
+						// console.log(select);
+						// console.log(tr.childNodes[i].outerHTML);
+						tr.childNodes[i].innerHTML = select.outerHTML;
+					}
+
+				}
+				// console.log(tr);
+				tr.querySelector(`#Edit${targetIdx - 1}`).style.display = 'none';
+				document.querySelector(`#Save${targetIdx - 1}`).style.display = 'block';
+			},
+
+			Save: btn => {
+				let targetIdx = btn.parentNode.parentNode.rowIndex;
+				let tr = document.querySelector('#classTable').rows[targetIdx];
+				// console.log(tr);
+				for (let i = 1; i < columns.length; i++) {
+					// console.log(tr.childNodes[i].childNodes[0])
+					// console.log(tr.childNodes[i].childNodes[0].value)
+					// console.log(columns[i]);
+					menu[targetIdx - 1][columns[i]] = tr.childNodes[i].childNodes[0].value;
+					crudApp.createTable();
+				}
+			},
+		}
+		crudApp.createTable();
+	</script>
+</body>
+
+</html>
