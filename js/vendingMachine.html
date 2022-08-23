@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Vending Machine</title>
+	<style>
+
+	</style>
+</head>
+
+<body>
+	<div class="container">
+		<div id="coinInsert">
+			<button id="hundred" data-value="100">100원 투입</button>
+			<button id="fiveHundred" data-value="500">500원 투입</button>
+			<button id="thousand" data-value="1000">1000원 투입</button>
+		</div>
+		<hr>
+		<div class="pocket">
+			<p>음료자판기 저장된 총 금액: <input type="text" class="insert" value="0" readonly></input></p>
+			<p>투입금액: <input type="text" class="total" value="0" readonly></input></p>
+			<p>내지갑: <input type="text" class="leftMoney" readonly></input></p>
+		</div>
+		<hr>
+		<div id="inventory">
+			<button id="coke">코카콜라(700원, 재고수: <span>5</span>)</button>
+			<button id="orange">오렌지주스(1200원, 재고수: <span>5</span>)</button>
+			<button id="coffee">커피(500원, 재고수: <span>5</span>)</button>
+			<button id="water">물(700원, 재고수: <span>5</span>)</button>
+			<button id="tea">옥수수수염차(1200원, 재고수: <span>5</span>)</button>
+			<button id="milkiss">밀키스(700원, 재고수: <span>5</span>)</button>
+			<button id="trevi">트레비(1000원, 재고수: <span>5</span>)</button>
+		</div>
+		<hr>
+		<div class="result">
+			<p><span class="insert"></span>이 투입되었습니다</p>
+			<p>총 투입 금액은 <span class="total">0</span>입니다.</p>
+			<p>당신의 지갑에는 <span class="leftMoney">10000</span>원이 남아 있습니다.</p>
+		</div>
+	</div>
+
+	<script>
+		const $ = tag => document.querySelector(tag);
+		const $$ = tag => document.querySelectorAll(tag);
+
+		const $coinInsert = $('#coinInsert');
+		const $hundred = $('#hundred');
+		const $fiveHundred = $('#fiveHundred');
+		const $thousand = $('#thousand');
+		const $insert = $$('.insert');
+		const $total = $$('.total');
+		const $leftMoney = $$('.leftMoney');
+
+		const $inventory = $('#inventory');
+		const $coke = $('#coke');
+		const $orange = $('#orange');
+		const $coffee = $('#coffee');
+		const $water = $('#water');
+		const $tea = $('#tea');
+		const $milkiss = $('#milkiss');
+		const $trevi = $('#trevi');
+
+		let insertedMoney = 0;
+		let totalMoney = 10000;
+		$leftMoney[0].value = totalMoney;
+
+		$coinInsert.addEventListener('click', event => {
+			let dataSetValue = Number(event.target.dataset.value);
+
+			if (!!dataSetValue) {
+				console.log('데이터셋 있음!');
+				if (totalMoney >= dataSetValue) {
+					//돈 증감
+					insertedMoney += dataSetValue;
+					$total[0].value = insertedMoney;
+					$total[1].innerText = insertedMoney;
+
+					//돈 차감
+					totalMoney -= dataSetValue;
+					$leftMoney[0].value = totalMoney
+					$leftMoney[1].innerText = totalMoney;
+				} else {
+					return;
+				}
+			} else {
+				console.log('데이터셋 없음!')
+				return;
+			}
+			console.log(`insetedMoney: ${insertedMoney}, totalMoney: ${totalMoney}`);
+		})
+
+		$inventory.addEventListener('click', event => {
+			console.log(event.target)
+		});
+	</script>
+</body>
+
+</html>
