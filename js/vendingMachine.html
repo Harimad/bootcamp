@@ -41,7 +41,7 @@
 </head>
 
 <body>
-	<div class="container mt-3 p-3">
+	<div class="container p-3">
 		<div id="inventory" class="text-center">
 			<div class=" row justify-content-center mb-3 gy-1">
 				<div class="col-sm-4">
@@ -92,32 +92,32 @@
 		</div>
 		<hr>
 		<div class="pocket row gy-1">
-			<div class="col-md-4">
+			<div class="col-sm-6 col-md-4">
 				<label for="insert" class="form-label">자판기에 저장된 금액: </label>
 				<input type="text" id="insert" class="insert form-control" value="0" readonly></input>
 			</div>
-			<div class="col-md-4">
+			<div class="col-sm-6 col-md-4">
 				<label for="total" class="form-label">투입금액: </label>
 				<input type="text" id="total" class="total form-control" value="0" readonly></input>
 			</div>
-			<div class="col-md-4">
+			<div class="col-sm-6 col-md-4">
 				<label for="leftMoney" class="form-label">내지갑: </label>
 				<input type="text" id="leftMoney" class="leftMoney form-control" readonly></input>
 			</div>
 		</div>
 		<hr>
 		<div id="coinInsert" class="text-center">
-			<div class="row justify-content-center gy-1">
-				<div class="col-md-3">
+			<div class="row justify-content-center gy-2">
+				<div class="col-sm-6 col-md-3">
 					<button id="hundred" class="btn btn-info" data-value="100">100원 투입</button>
 				</div>
-				<div class="col-md-3">
+				<div class="col-sm-6 col-md-3">
 					<button id="fiveHundred" class="btn btn-warning" data-value="500">500원 투입</button>
 				</div>
-				<div class="col-md-3">
+				<div class="col-sm-6 col-md-3">
 					<button id="thousand" class="btn btn-success" data-value="1000">1000원 투입</button>
 				</div>
-				<div class="col-md-3">
+				<div class="col-sm-6 col-md-3">
 					<button id="return" class="btn btn-outline-danger">거스름돈 반환</button>
 				</div>
 			</div>
@@ -156,7 +156,7 @@
 		const $milkiss = $('#milkiss');
 		const $trevi = $('#trevi');
 
-		// const drinkLists = ['coke', 'orange', 'coffee', 'water', 'tea', 'milkiss', 'trevi'];
+		const drinkLists = ['coke', 'orange', 'coffee', 'water', 'tea', 'milkiss', 'trevi'];
 		const leftDrink = [
 			{ coke: Number($coke.innerText) },
 			{ orange: Number($orange.innerText) },
@@ -187,7 +187,6 @@
 
 		$coinInsert.addEventListener('click', event => {
 			if (totalMoney >= 100) {
-
 				let dataSetValue = Number(event.target.dataset.value);
 
 				if (!!dataSetValue) {
@@ -197,6 +196,7 @@
 						insertedMoney += dataSetValue;
 						$$total[0].value = insertedMoney;
 						$$total[1].innerText = insertedMoney;
+						changeColor(insertedMoney);
 
 						//돈 차감
 						totalMoney -= dataSetValue;
@@ -258,6 +258,8 @@
 			if (insertedMoney >= 100) {
 				totalMoney += insertedMoney;
 				insertedMoney = 0;
+				changeColor(insertedMoney)
+
 
 				// 자판기, Message에서 투입금액 새로고침
 				$$total[0].value = insertedMoney;
@@ -270,6 +272,59 @@
 			}
 		})
 
+		// (동전 넣을 때 마다 || 거스름돈 반활 할 때마다)
+		// 삽입된 돈이 음료 값 이상이면 버튼 클래스를 btn-info 변경
+		function changeColor(money) {
+			// 처음엔 전부 일반테두리로 두름
+			for (let i = 0; i < drinkLists.length; i++) {
+				$(`.${drinkLists[i]}`).classList.remove('btn-info');
+				$(`.${drinkLists[i]}`).classList.remove('btn-danger');
+				$(`.${drinkLists[i]}`).classList.add('btn-outline-dark');
+			}
+
+			if (money >= 1200) {
+				$('.orange').classList.remove('btn-outline-dark');
+				$('.orange').classList.add('btn-info');
+				$('.tea').classList.remove('btn-outline-dark');
+				$('.tea').classList.add('btn-info');
+			}
+			if (money >= 1000) {
+				$('.trevi').classList.remove('btn-outline-dark');
+				$('.trevi').classList.add('btn-info');
+			}
+			if (money >= 700) {
+				$('.coke').classList.remove('btn-outline-dark');
+				$('.coke').classList.add('btn-info');
+				$('.water').classList.remove('btn-outline-dark');
+				$('.water').classList.add('btn-info');
+				$('.milkiss').classList.remove('btn-outline-dark');
+				$('.milkiss').classList.add('btn-info');
+			}
+			if (money >= 500) {
+				$('.coffee').classList.remove('btn-outline-dark');
+				$('.coffee').classList.add('btn-info');
+			}
+		}
+
+		// 버튼을 눌러서 남은 음료의 개수 중에 0 에 도달하면
+		// 버튼의 클래스를 btn-danger로 변경
+		function checkLeftDrink() {
+			console.log(leftDrink);
+
+		}
+
+		checkLeftDrink();
+
+		// $inventory.addEventListener('click', event => {
+		// 	if (!!event.target.dataset.class) {
+		// 		// console.dir(event.target);
+		// 		if (event.target.childNodes[5].innerText === '0') {
+		// 			event.target.classList.add('btn-danger');
+		// 		}
+		// 	} else {
+		// 		return
+		// 	}
+		// })
 	</script>
 </body>
 
