@@ -16,36 +16,27 @@
 </head>
 
 <body>
-	<div class="container gy-5">
-		<i class="fa-solid fa-glass-water"></i>
-		<div id="inventory">
-			<button class="btn btn-primary coke" data-value="700" data-num="0">코카콜라(700원, 재고수: <span
-					id="coke">5</span>)</button>
-			<button class="btn btn-primary orange" data-value="1200" data-num="1">오렌지주스(1200원, 재고수: <span
-					id="orange">5</span>)</button>
-			<button class="btn btn-primary coffee" data-value="500" data-num="2">커피(500원, 재고수: <span
-					id="coffee">5</span>)</button>
-			<button class="btn btn-primary water" data-value="700" data-num="3">물(700원, 재고수: <span
-					id="water">5</span>)</button>
-			<button class="btn btn-primary tea" data-value="1200" data-num="4">옥수수수염차(1200원, 재고수: <span
-					id="tea">5</span>)</button>
-			<button class="btn btn-primary milkiss" data-value="700" data-num="5">밀키스(700원, 재고수: <span
-					id="milkiss">5</span>)</button>
-			<button class="btn btn-primary trevi" data-value="1000" data-num="6">트레비(1000원, 재고수: <span
-					id="trevi">5</span>)</button>
+	<div class="container">
+		<div id="coinInsert">
+			<button id="hundred" data-value="100">100원 투입</button>
+			<button id="fiveHundred" data-value="500">500원 투입</button>
+			<button id="thousand" data-value="1000">1000원 투입</button>
 		</div>
 		<hr>
-
 		<div class="pocket">
 			<p>음료자판기 저장된 총 금액: <input type="text" class="insert" value="0" readonly></input></p>
 			<p>투입금액: <input type="text" class="total" value="0" readonly></input></p>
 			<p>내지갑: <input type="text" class="leftMoney" readonly></input></p>
 		</div>
 		<hr>
-		<div id="coinInsert">
-			<button id="hundred" data-value="100">100원 투입</button>
-			<button id="fiveHundred" data-value="500">500원 투입</button>
-			<button id="thousand" data-value="1000">1000원 투입</button>
+		<div id="inventory">
+			<button class="coke" data-value="700" data-num="0">코카콜라(700원, 재고수: <span id="coke">5</span>)</button>
+			<button class="orange" data-value="1200" data-num="1">오렌지주스(1200원, 재고수: <span id="orange">5</span>)</button>
+			<button class="coffee" data-value="500" data-num="2">커피(500원, 재고수: <span id="coffee">5</span>)</button>
+			<button class="water" data-value="700" data-num="3">물(700원, 재고수: <span id="water">5</span>)</button>
+			<button class="tea" data-value="1200" data-num="4">옥수수수염차(1200원, 재고수: <span id="tea">5</span>)</button>
+			<button class="milkiss" data-value="700" data-num="5">밀키스(700원, 재고수: <span id="milkiss">5</span>)</button>
+			<button class="trevi" data-value="1000" data-num="6">트레비(1000원, 재고수: <span id="trevi">5</span>)</button>
 		</div>
 		<hr>
 		<div class="result">
@@ -177,6 +168,7 @@
 				return;
 			}
 		});
+
 	</script>
 </body>
 
