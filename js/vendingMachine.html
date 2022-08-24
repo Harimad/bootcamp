@@ -197,6 +197,7 @@
 						$$total[0].value = insertedMoney;
 						$$total[1].innerText = insertedMoney;
 						changeColor(insertedMoney);
+						checkLeftDrink()
 
 						//돈 차감
 						totalMoney -= dataSetValue;
@@ -237,7 +238,7 @@
 
 						// 음료 재고 재랜더링
 						renderLeftDrink();
-						console.log(leftDrink);
+						checkLeftDrink();
 
 						//음료자판기 저장 금액 증가
 						machineHas += dataSetValue;
@@ -259,6 +260,7 @@
 				totalMoney += insertedMoney;
 				insertedMoney = 0;
 				changeColor(insertedMoney)
+				checkLeftDrink();
 
 
 				// 자판기, Message에서 투입금액 새로고침
@@ -309,22 +311,18 @@
 		// 버튼을 눌러서 남은 음료의 개수 중에 0 에 도달하면
 		// 버튼의 클래스를 btn-danger로 변경
 		function checkLeftDrink() {
-			console.log(leftDrink);
-
+			for (const drink of leftDrink) {
+				for (const key in drink) {
+					if (drink[key] === 0) {
+						// console.log(`There is no ${key}`);
+						$(`.${key}`).classList.remove('btn-info');
+						$(`.${key}`).classList.remove('btn-oueline-dark');
+						$(`.${key}`).classList.add('btn-danger');
+					}
+				}
+			}
 		}
 
-		checkLeftDrink();
-
-		// $inventory.addEventListener('click', event => {
-		// 	if (!!event.target.dataset.class) {
-		// 		// console.dir(event.target);
-		// 		if (event.target.childNodes[5].innerText === '0') {
-		// 			event.target.classList.add('btn-danger');
-		// 		}
-		// 	} else {
-		// 		return
-		// 	}
-		// })
 	</script>
 </body>
 
