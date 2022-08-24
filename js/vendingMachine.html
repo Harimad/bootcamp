@@ -130,6 +130,8 @@
 			<p>당신의 지갑에는 <span class="leftMoney">10000</span>원이 남아 있습니다.</p>
 		</div>
 	</div>
+	<!-- sweetHeart2 JS cdn -->
+	<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 	<!-- BootStrap JS cdn -->
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
 		integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
@@ -211,18 +213,14 @@
 				}
 				console.log(`insetedMoney: ${insertedMoney}, totalMoney: ${totalMoney}`);
 			} else {
-				return alert('투입할 돈이 없습니다.')
+				return showError('투입할 돈이 없습니다.')
 			}
 		})
 
 		$inventory.addEventListener('click', event => {
-			// console.log(event.target.className)
-			// console.dir(event.target)
 			let dataSetValue = Number(event.target.dataset.value);
 			let dataSetNum = Number(event.target.dataset.num);
 			let dataClass = event.target.dataset.class;
-			// console.log(dataSetValue);
-			// console.log(dataSetNum, dataClass);
 
 			if (!!dataSetValue) {
 				//투입금액이 음료보다 더 커야 & 재고수가 1개 이상 있어야 실행
@@ -236,8 +234,9 @@
 						//재고수 차감
 						leftDrink[dataSetNum][dataClass] -= 1;
 
-						// 음료 재고 재랜더링
+						// 음료 재랜더링
 						renderLeftDrink();
+						changeColor(insertedMoney);
 						checkLeftDrink();
 
 						//음료자판기 저장 금액 증가
@@ -245,10 +244,10 @@
 						$$insert[0].value = machineHas;
 						$$insert[1].innerText = machineHas;
 					} else {
-						return alert('금액이 부족합니다.')
+						return showError('금액이 부족합니다.')
 					}
 				} else {
-					return alert('재고가 부족합니다');
+					return showError('재고가 부족합니다');
 				}
 			} else {
 				return;
@@ -270,7 +269,7 @@
 				$$leftMoney[0].value = totalMoney;
 				$$leftMoney[1].innerText = totalMoney;
 			} else {
-				return alert('반환할 돈이 없습니다.')
+				return showError('반환할 돈이 없습니다.')
 			}
 		})
 
@@ -314,7 +313,6 @@
 			for (const drink of leftDrink) {
 				for (const key in drink) {
 					if (drink[key] === 0) {
-						// console.log(`There is no ${key}`);
 						$(`.${key}`).classList.remove('btn-info');
 						$(`.${key}`).classList.remove('btn-oueline-dark');
 						$(`.${key}`).classList.add('btn-danger');
@@ -323,6 +321,15 @@
 			}
 		}
 
+		// sweetHeart2 에러창 날리는 함수
+		function showError(text) {
+			Swal.fire({
+				icon: 'error',
+				title: '알림',
+				text: text,
+				// footer: '<a href="">Why do I have this issue?</a>'
+			})
+		}
 	</script>
 </body>
 
