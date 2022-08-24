@@ -13,22 +13,56 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
 		integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
 		crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<style>
+		.container {
+			background-color: #EEE;
+		}
+
+		.btn {
+			width: 160px;
+			height: 150px;
+			font-size: 18px;
+			font-weight: bold;
+		}
+
+	</style>
 </head>
 
 <body>
-	<div class="container mt-3">
-
-
-		<hr>
-
+	<div class="container mt-3 p-3">
 		<div id="inventory">
-			<button class="coke" data-value="700" data-num="0">코카콜라(700원, 재고수: <span id="coke">5</span>)</button>
-			<button class="orange" data-value="1200" data-num="1">오렌지주스(1200원, 재고수: <span id="orange">5</span>)</button>
-			<button class="coffee" data-value="500" data-num="2">커피(500원, 재고수: <span id="coffee">5</span>)</button>
-			<button class="water" data-value="700" data-num="3">물(700원, 재고수: <span id="water">5</span>)</button>
-			<button class="tea" data-value="1200" data-num="4">옥수수수염차(1200원, 재고수: <span id="tea">5</span>)</button>
-			<button class="milkiss" data-value="700" data-num="5">밀키스(700원, 재고수: <span id="milkiss">5</span>)</button>
-			<button class="trevi" data-value="1000" data-num="6">트레비(1000원, 재고수: <span id="trevi">5</span>)</button>
+			<div class="row text-center align-items-center justify-content-center mt-3 mb-3">
+				<div class="col-3">
+					<button class="coke btn btn-outline-info" data-class="coke" data-value="700" data-num="0">Coke<br>(700원, 재고수:
+						<span id="coke">5</span>)</but>
+				</div>
+				<div class="col-3">
+					<button class="orange btn btn-outline-info" data-class="orange" data-value="1200"
+						data-num="1">Orange<br>(1200원, 재고수: <span id="orange">5</span>)</button>
+				</div>
+				<div class="col-3">
+					<button class="coffee btn btn-outline-info" data-class="coffee" data-value="500" data-num="2">Coffee<br>(500원,
+						재고수: <span id="coffee">5</span>)</button>
+				</div>
+			</div>
+			<div class="row align-items-center justify-content-center mt-3">
+				<div class="col-3">
+					<button class="water btn btn-outline-info" data-class="water" data-value="700" data-num="3">Water<br>(700원,
+						재고수: <span id="water">5</span>)</button>
+				</div>
+				<div class="col-3">
+					<button class="tea btn btn-outline-info" data-class="tea" data-value="1200" data-num="4">Tea<br>(1200원, 재고수:
+						<span id="tea">5</span>)</button>
+				</div>
+				<div class="col-3">
+					<button class="milkiss btn btn-outline-info" data-class="milkiss" data-value="700"
+						data-num="5">Milkiss<br>(700원, 재고수: <span id="milkiss">5</span>)</button>
+				</div>
+				<div class="col-3">
+					<button class="trevi btn btn-outline-info" data-class="trevi" data-value="1000" data-num="6">Trevi<br>(1000원,
+						재고수: <span id="trevi">5</span>)</button>
+				</div>
+			</div>
 		</div>
 		<hr>
 		<div class="pocket row">
@@ -49,8 +83,8 @@
 		<div id="coinInsert" class="text-center">
 			<button id="hundred" class="btn btn-secondary" data-value="100">100원 투입</button>
 			<button id="fiveHundred" class="btn btn-success" data-value="500">500원 투입</button>
-			<button id="thousand" class="btn btn-info" data-value="1000">1000원 투입</button>
-			<button id="return" class="btn btn-danger">거스름돈 반환</button>
+			<button id="thousand" class="btn btn-dark" data-value="1000">1000원 투입</button>
+			<button id="return" class="btn btn-outline-danger">거스름돈 반환</button>
 		</div>
 		<hr>
 		<div class="result text-center">
@@ -149,7 +183,7 @@
 			// console.dir(event.target)
 			let dataSetValue = Number(event.target.dataset.value);
 			let dataSetNum = Number(event.target.dataset.num);
-			let dataClass = event.target.className;
+			let dataClass = event.target.dataset.class;
 			// console.log(dataSetValue);
 			// console.log(dataSetNum, dataClass);
 
