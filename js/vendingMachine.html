@@ -6,33 +6,46 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Vending Machine</title>
-	<style>
-
-	</style>
+	<!-- BootStrap css cdn -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+	<!-- fontawesome cdn -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+		integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
-	<div class="container">
-		<div id="coinInsert">
-			<button id="hundred" data-value="100">100원 투입</button>
-			<button id="fiveHundred" data-value="500">500원 투입</button>
-			<button id="thousand" data-value="1000">1000원 투입</button>
+	<div class="container gy-5">
+		<i class="fa-solid fa-glass-water"></i>
+		<div id="inventory">
+			<button class="btn btn-primary coke" data-value="700" data-num="0">코카콜라(700원, 재고수: <span
+					id="coke">5</span>)</button>
+			<button class="btn btn-primary orange" data-value="1200" data-num="1">오렌지주스(1200원, 재고수: <span
+					id="orange">5</span>)</button>
+			<button class="btn btn-primary coffee" data-value="500" data-num="2">커피(500원, 재고수: <span
+					id="coffee">5</span>)</button>
+			<button class="btn btn-primary water" data-value="700" data-num="3">물(700원, 재고수: <span
+					id="water">5</span>)</button>
+			<button class="btn btn-primary tea" data-value="1200" data-num="4">옥수수수염차(1200원, 재고수: <span
+					id="tea">5</span>)</button>
+			<button class="btn btn-primary milkiss" data-value="700" data-num="5">밀키스(700원, 재고수: <span
+					id="milkiss">5</span>)</button>
+			<button class="btn btn-primary trevi" data-value="1000" data-num="6">트레비(1000원, 재고수: <span
+					id="trevi">5</span>)</button>
 		</div>
 		<hr>
+
 		<div class="pocket">
 			<p>음료자판기 저장된 총 금액: <input type="text" class="insert" value="0" readonly></input></p>
 			<p>투입금액: <input type="text" class="total" value="0" readonly></input></p>
 			<p>내지갑: <input type="text" class="leftMoney" readonly></input></p>
 		</div>
 		<hr>
-		<div id="inventory">
-			<button class="coke" data-value="700" data-num="0">코카콜라(700원, 재고수: <span id="coke">5</span>)</button>
-			<button class="orange" data-value="1200" data-num="1">오렌지주스(1200원, 재고수: <span id="orange">5</span>)</button>
-			<button class="coffee" data-value="500" data-num="2">커피(500원, 재고수: <span id="coffee">5</span>)</button>
-			<button class="water" data-value="700" data-num="3">물(700원, 재고수: <span id="water">5</span>)</button>
-			<button class="tea" data-value="1200" data-num="4">옥수수수염차(1200원, 재고수: <span id="tea">5</span>)</button>
-			<button class="milkiss" data-value="700" data-num="5">밀키스(700원, 재고수: <span id="milkiss">5</span>)</button>
-			<button class="trevi" data-value="1000" data-num="6">트레비(1000원, 재고수: <span id="trevi">5</span>)</button>
+		<div id="coinInsert">
+			<button id="hundred" data-value="100">100원 투입</button>
+			<button id="fiveHundred" data-value="500">500원 투입</button>
+			<button id="thousand" data-value="1000">1000원 투입</button>
 		</div>
 		<hr>
 		<div class="result">
@@ -42,7 +55,10 @@
 			<p>당신의 지갑에는 <span class="leftMoney">10000</span>원이 남아 있습니다.</p>
 		</div>
 	</div>
-
+	<!-- BootStrap JS cdn -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+		crossorigin="anonymous"></script>
 	<script>
 		const $ = tag => document.querySelector(tag);
 		const $$ = tag => document.querySelectorAll(tag);
@@ -161,7 +177,6 @@
 				return;
 			}
 		});
-
 	</script>
 </body>
 
