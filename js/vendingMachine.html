@@ -16,19 +16,11 @@
 </head>
 
 <body>
-	<div class="container">
-		<div id="coinInsert">
-			<button id="hundred" data-value="100">100원 투입</button>
-			<button id="fiveHundred" data-value="500">500원 투입</button>
-			<button id="thousand" data-value="1000">1000원 투입</button>
-		</div>
+	<div class="container mt-3">
+
+
 		<hr>
-		<div class="pocket">
-			<p>음료자판기 저장된 총 금액: <input type="text" class="insert" value="0" readonly></input></p>
-			<p>투입금액: <input type="text" class="total" value="0" readonly></input></p>
-			<p>내지갑: <input type="text" class="leftMoney" readonly></input></p>
-		</div>
-		<hr>
+
 		<div id="inventory">
 			<button class="coke" data-value="700" data-num="0">코카콜라(700원, 재고수: <span id="coke">5</span>)</button>
 			<button class="orange" data-value="1200" data-num="1">오렌지주스(1200원, 재고수: <span id="orange">5</span>)</button>
@@ -39,10 +31,32 @@
 			<button class="trevi" data-value="1000" data-num="6">트레비(1000원, 재고수: <span id="trevi">5</span>)</button>
 		</div>
 		<hr>
-		<div class="result">
+		<div class="pocket row">
+			<div class="col-4">
+				<label for="insert" class="form-label">자판기에 저장된 금액: </label>
+				<input type="text" id="insert" class="insert form-control" value="0" readonly></input>
+			</div>
+			<div class="col-4">
+				<label for="total" class="form-label">투입금액: </label>
+				<input type="text" id="total" class="total form-control" value="0" readonly></input>
+			</div>
+			<div class="col-4">
+				<label for="leftMoney" class="form-label">내지갑: </label>
+				<input type="text" id="leftMoney" class="leftMoney form-control" readonly></input>
+			</div>
+		</div>
+		<hr>
+		<div id="coinInsert" class="text-center">
+			<button id="hundred" class="btn btn-secondary" data-value="100">100원 투입</button>
+			<button id="fiveHundred" class="btn btn-success" data-value="500">500원 투입</button>
+			<button id="thousand" class="btn btn-info" data-value="1000">1000원 투입</button>
+			<button id="return" class="btn btn-danger">거스름돈 반환</button>
+		</div>
+		<hr>
+		<div class="result text-center">
 			<h3>Message</h3>
-			<p>자판기에는 총<span class="insert">0</span>원이 있습니다.</p>
-			<p>총 투입 금액은 <span class="total">0</span>입니다.</p>
+			<p>자판기에는 총 <span class="insert">0</span>원이 있습니다.</p>
+			<p>총 투입 금액은 <span class="total">0</span>원 입니다.</p>
 			<p>당신의 지갑에는 <span class="leftMoney">10000</span>원이 남아 있습니다.</p>
 		</div>
 	</div>
@@ -61,6 +75,7 @@
 		const $$insert = $$('.insert');
 		const $$total = $$('.total');
 		const $$leftMoney = $$('.leftMoney');
+		const $return = $('#return');
 
 		const $inventory = $('#inventory');
 		const $coke = $('#coke');
@@ -168,6 +183,22 @@
 				return;
 			}
 		});
+
+		$return.addEventListener('click', event => {
+			if (insertedMoney >= 100) {
+				totalMoney += insertedMoney;
+				insertedMoney = 0;
+
+				// 자판기, Message에서 투입금액 새로고침
+				$$total[0].value = insertedMoney;
+				$$total[1].innerText = insertedMoney;
+				// 자판기, Message에서 내지갑 새로고침
+				$$leftMoney[0].value = totalMoney;
+				$$leftMoney[1].innerText = totalMoney;
+			} else {
+				return alert('반환할 돈이 없습니다.')
+			}
+		})
 
 	</script>
 </body>
