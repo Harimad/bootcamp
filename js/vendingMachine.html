@@ -22,6 +22,7 @@
 		.container {
 			background-color: #c2eafc;
 			border-radius: 20px;
+			max-width: 1000px;
 		}
 
 		.btn {
@@ -37,6 +38,11 @@
 			background-color: #eee;
 		}
 
+		.drinkImg {
+			width: 100px;
+			height: 100px;
+		}
+
 	</style>
 </head>
 
@@ -46,46 +52,54 @@
 			<div class=" row justify-content-center mb-3 gy-1">
 				<div class="col-sm-4">
 					<button class="coke btn btn-outline-dark" data-class="coke" data-value="700" data-num="0">
-						Coke
-						<hr>700￦<br>재고: <span id="coke">5</span>
+						<img class="drinkImg" src="./img/coke.jpg" data-class="coke" data-value="700" data-num="0">
+						<hr>
+						Coke 700￦<br>재고: <span id="coke">5</span>
 					</button>
 				</div>
 				<div class="col-sm-4">
 					<button class="orange btn btn-outline-dark" data-class="orange" data-value="1200" data-num="1">
-						Orange
-						<hr>1200￦<br>재고: <span id="orange">5</span>
+						<img class="drinkImg" src="./img/orangeJuice.jpg" data-class="orange" data-value="1200" data-num="1">
+						<hr>
+						Orange 1200￦<br>재고: <span id="orange">5</span>
 					</button>
 				</div>
 				<div class="col-sm-4">
 					<button class="coffee btn btn-outline-dark" data-class="coffee" data-value="500" data-num="2">
-						Coffee
-						<hr>500￦<br>재고: <span id="coffee">5</span>
+						<img class="drinkImg" src="./img/coffee.jpg" data-class="coffee" data-value="500" data-num="2">
+						<hr>
+						Coffee 500￦<br>재고: <span id="coffee">5</span>
 					</button>
 				</div>
 			</div>
 			<div class="row justify-content-around align-items-center me-2 gy-1">
 				<div class="col-sm-6 col-md-3">
 					<button class="water btn btn-outline-dark" data-class="water" data-value="700" data-num="3">
-						Water
-						<hr>700￦<br>재고: <span id="water">5</span>
+						<img class="drinkImg" src="./img/water.jpg" data-class="water" data-value="700" data-num="3">
+						<hr>
+						Water 700￦<br>재고: <span id="water">5</span>
 					</button>
 				</div>
 				<div class="col-sm-6 col-md-3">
 					<button class="tea btn btn-outline-dark" data-class="tea" data-value="1200" data-num="4">
-						Tea
-						<hr>1200￦<br>재고:<span id="tea">5</span>
+						<img class="drinkImg" src="./img/tea.jpg" data-class="tea" data-value="1200" data-num="4">
+						<hr>
+						Tea 1200￦<br>재고:<span id="tea">5</span>
+						</img>
 					</button>
 				</div>
 				<div class="col-sm-6 col-md-3">
 					<button class="milkiss btn btn-outline-dark" data-class="milkiss" data-value="700" data-num="5">
-						Milkiss
-						<hr>700￦<br>재고: <span id="milkiss">5</span>
+						<img class="drinkImg" src="./img/millkiss.jpg" data-class="milkiss" data-value="700" data-num="5">
+						<hr>
+						Milkiss 700￦<br>재고: <span id="milkiss">5</span>
 					</button>
 				</div>
 				<div class="col-sm-6 col-md-3">
 					<button class="trevi btn btn-outline-dark" data-class="trevi" data-value="1000" data-num="6">
-						Trevi
-						<hr>1000￦<br>재고: <span id="trevi">5</span>
+						<img class="drinkImg" src="./img/trevi.png" data-class="trevi" data-value="1000" data-num="6">
+						<hr>
+						Trevi 1000￦<br>재고: <span id="trevi">5</span>
 					</button>
 				</div>
 			</div>
@@ -221,6 +235,7 @@
 			let dataSetValue = Number(event.target.dataset.value);
 			let dataSetNum = Number(event.target.dataset.num);
 			let dataClass = event.target.dataset.class;
+			console.log(dataSetValue)
 
 			if (!!dataSetValue) {
 				//투입금액이 음료보다 더 커야 & 재고수가 1개 이상 있어야 실행
