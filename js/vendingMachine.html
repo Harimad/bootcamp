@@ -106,20 +106,20 @@
 			</div>
 		</div>
 		<hr>
-		<div id="coinInsert" class="text-center">
-			<div class="row justify-content-center gy-2">
-				<div class="col-sm-6 col-md-3">
-					<button id="hundred" class="btn btn-info" data-value="100">100원 투입</button>
-				</div>
-				<div class="col-sm-6 col-md-3">
-					<button id="fiveHundred" class="btn btn-warning" data-value="500">500원 투입</button>
-				</div>
-				<div class="col-sm-6 col-md-3">
-					<button id="thousand" class="btn btn-success" data-value="1000">1000원 투입</button>
-				</div>
-				<div class="col-sm-6 col-md-3">
-					<button id="return" class="btn btn-outline-danger">거스름돈 반환</button>
-				</div>
+		<div id="coinInsert" class="text-center row justify-content-center gy-2">
+			<div class="col-sm-6 col-md-3">
+				<button id="hundred" class="btn btn-info" data-value="100">100원 투입</button>
+			</div>
+			<div class="col-sm-6 col-md-3">
+				<button id="fiveHundred" class="btn btn-warning" data-value="500">500원 투입</button>
+			</div>
+			<div class="col-sm-6 col-md-3">
+				<button id="thousand" class="btn btn-success" data-value="1000">1000원 투입</button>
+			</div>
+		</div>
+		<div class="row justify-content-center mt-2">
+			<div class="col-sm-6 col-md-3">
+				<button id="return" class="btn btn-outline-danger">거스름돈 반환</button>
 			</div>
 		</div>
 		<hr>
@@ -255,12 +255,11 @@
 		});
 
 		$return.addEventListener('click', event => {
-			if (insertedMoney >= 100) {
+			if (insertedMoney > 0) {
 				totalMoney += insertedMoney;
 				insertedMoney = 0;
 				changeColor(insertedMoney)
 				checkLeftDrink();
-
 
 				// 자판기, Message에서 투입금액 새로고침
 				$$total[0].value = insertedMoney;
@@ -327,7 +326,6 @@
 				icon: 'error',
 				title: '알림',
 				text: text,
-				// footer: '<a href="">Why do I have this issue?</a>'
 			})
 		}
 	</script>
