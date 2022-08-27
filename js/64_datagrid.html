@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		.normal-table {
+			border: 1px solid black;
+			border-collapse: collapse;
+			width: 100%;
+		}
+
+		.normal-table th,
+		.normal-table td {
+			border: 1px solid balck;
+			padding: 5px 10px;
+		}
+
+		.normal-table thead tr {
+			background-color: aqua;
+		}
+
+		.striped tbody tr:nth-child(2n) {
+			background-color: antiquewhite;
+		}
+
+		.hover tbody tr:hover {
+			background-color: aquamarine;
+		}
+
+		.pagination {
+			display: inline-block;
+			margin-top: 10px;
+		}
+
+		.pagination a {
+			color: black;
+			padding: 8px 16px;
+			text-decoration: none;
+			cursor: pointer;
+		}
+
+		.pagination a.active {
+			background-color: deeppink;
+			color: white;
+		}
+
+	</style>
+</head>
+
+<body>
+	<select name="" id="gender">
+		<option value="">전체</option>
+		<option value="male">남자</option>
+		<option value="female">여자</option>
+	</select>
+	<input type="search" name="" id="name" placeholder="Name" onkeyup="checkEnter()">
+	<button onclick="doSearch()">조회</button>
+	<button onclick="goToCreate()">생성</button>
+	<button id="btnDelete" onclick="doDelete()" disabled>삭제</button>
+	<table class="normal-table striped hover">
+		<thead>
+			<tr>
+				<th><input type="checkbox" onchange="checkAll()"></th>
+				<th data-sort-key="name">Name</th>
+				<th data-sort-key="company">Company</th>
+				<th data-sort-key="gender">Gender</th>
+				<th data-sort-key="email">Email</th>
+				<th data-sort-key="phone">Phone</th>
+				<th data-sort-key="address">Address</th>
+			</tr>
+			<tr>
+				<th></th>
+				<th><input type="search" data-filter-key="name"></th>
+				<th><input type="search" data-filter-key="company"></th>
+				<th><input type="search" data-filter-key="gender"></th>
+				<th><input type="search" data-filter-key="email"></th>
+				<th><input type="search" data-filter-key="phone"></th>
+				<th><input type="search" data-filter-key="address"></th>
+			</tr>
+		</thead>
+		<tbody id="tbBody"></tbody>
+	</table>
+	<div id="pagination" class="pagination"></div>
+	<script>
+		let customerData = [];
+
+		//CRUD
+		async function doSearch() {
+			let gender = document.querySelector('#gender').value; // '', male, female
+			let name = document.querySelector('#name').value;
+
+			let resource = `http://localhost:3000/customers?`;
+
+			if (gender !== '') {
+				if (name !== '') {
+					// gender & name
+					resource += `gender=${gender}&name_like=${name}`;
+				} else {
+					// gender
+					resource += `gender=${gender}`;
+				}
+			} else {
+				if (name !== '') {
+					// name
+					resource += `name_like=${name}`;
+				}
+			}
+			const response = await fetch(resource);
+			const resJson = await response.json();
+			console.log(resJson);
+			renderTable(resJson);
+		}
+
+		function renderTable(data) {
+			const h = [];
+			for (const item of data) {
+				h.push(`<tr>`);
+				h.push(`<td><input type="checkbox" name="chk" value="${item.id}" onchange="isChecked();"/>`);
+				h.push(`<td><a href="javascript:goToDetail('${item.id}');">${item.name}</a></td>`)
+				h.push(`<td>${item.company}</td>`);
+				h.push(`<td>${item.gender}</td>`);
+				h.push(`<td>${item.email}</td>`);
+				h.push(`<td>${item.phone}</td>`);
+				h.push(`<td>${item.address}</td>`);
+				h.push(`</tr>`);
+			}
+			document.querySelector('#tbBody').innerHTML = h.join("");
+		}
+
+		function goToCreate() {
+			document.location.href = '60_dom_crud_create.html';
+		}
+
+		function goToDetail(id) {
+			document.location.href = `61_dom_crud_detail.html?id=${id}`;
+		}
+
+		async function doDelete() {
+			const chks = document.querySelectorAll('[name=chk]:checked');
+			if (chks.length > 0) {
+				if (confirm('You Really want to delete item/items?')) {
+					for (let chk of chks) {
+						await fetch(`http://localhost:3000/customers/${chk.value}`, {
+							method: "DELETE",
+						});
+					}
+					await doSearch();
+					alert('Data is now Deleted!');
+				}
+			} else {
+				alert('Please select item/items you want to Delete.');
+			}
+		}
+
+		function checkAll() {
+			console.log(event.target.checked);
+			const checkValue = event.target.checked;
+			const chks = document.querySelectorAll('[name=chk]');
+			console.log(chks, chks.length);
+			if (chks.length > 0) {
+				for (const chk of chks) {
+					chk.checked = checkValue;
+				}
+			}
+			isChecked();
+		}
+
+		function isChecked() {
+			const chks = document.querySelectorAll('[name=chk]:checked');
+			if (chks.length > 0) {
+				document.querySelector('#btnDelete').disabled = false;
+			} else {
+				document.querySelector('#btnDelete').disabled = true;
+			}
+		}
+
+		function checkEnter() {
+			if (event.keyCode === 13) {
+				doSearch();
+			}
+		}
+
+		// Add More functions
+
+		function sort() { }
+
+		function filter() { }
+
+		function paging() { }
+
+		function renderPagination() { }
+
+		function prevPage() { }
+
+		function nextPage() { }
+
+		function changePage() { }
+	</script>
+</body>
+
+</html>
