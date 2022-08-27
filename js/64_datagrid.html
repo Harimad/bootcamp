@@ -217,7 +217,7 @@
 		}
 
 		function renderPagination() {
-			console.log(`pageRange: ${pageRange}, totalPage: ${totalPage}`);
+			// console.log(`pageRange: ${pageRange}, totalPage: ${totalPage}`);
 			const h = [];
 			if (pageRange[0] > 1) {
 				h.push(`<a href="javascript:prevPage();">&laquo</a>`);
@@ -237,9 +237,40 @@
 
 		function prevPage() { }
 
-		function nextPage() { }
+		function nextPage() {
+			const pageNum = pageRange[pageRange.length - 1];
+			console.log(pageNum);
+			const startPageNum = pageNum + 1;
+			let endPageNum = pageNum + 5;
 
-		function changePage() { }
+			if (endPageNum > totalPage) {
+				endPageNum = totalPage;
+			}
+
+			pageRange = [];
+			for (let i = startPageNum; i <= endPageNum; i++) {
+				pageRange.push(i);
+			}
+
+			console.log(`pageRange: ${pageRange}`);
+
+			changePage(startPageNum);
+		}
+
+		function changePage(pageNum) {
+			currentPage = pageNum;
+			const startIdx = (pageNum - 1) * pagecnt;
+			let endIdx = pageNum * pagecnt;
+			console.log(`currentPage:${currentPage}, startIdx:${startIdx}, endIdx:${endIdx}`);
+			console.log(`filterData Len: ${filterData.length}`);
+
+			if (endIdx > filterData.length) {
+				endIdx = filterData.length;
+			}
+
+			renderTable(filterData.slice(startIdx, endIdx));
+			renderPagination();
+		}
 	</script>
 </body>
 
