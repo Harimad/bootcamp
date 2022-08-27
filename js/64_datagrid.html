@@ -235,11 +235,20 @@
 			document.querySelector('#pagination').innerHTML = h.join('');
 		}
 
-		function prevPage() { }
+		function prevPage() {
+			console.log(`prevPage -> pageRange: ${pageRange}`);
+			const pageNum = pageRange[0];
+
+			pageRange = [
+				pageNum - 5, pageNum - 4, pageNum - 3, pageNum - 2, pageNum - 1
+			];
+			console.log(`prevPage -> pageRange: ${pageRange}`);
+			changePage(pageNum - 1);
+		}
 
 		function nextPage() {
 			const pageNum = pageRange[pageRange.length - 1];
-			console.log(pageNum);
+			console.log(`pageNum: ${pageNum}`);
 			const startPageNum = pageNum + 1;
 			let endPageNum = pageNum + 5;
 
@@ -252,7 +261,7 @@
 				pageRange.push(i);
 			}
 
-			console.log(`pageRange: ${pageRange}`);
+			console.log(`nexPage() -> pageRange: ${pageRange}`);
 
 			changePage(startPageNum);
 		}
@@ -261,8 +270,8 @@
 			currentPage = pageNum;
 			const startIdx = (pageNum - 1) * pagecnt;
 			let endIdx = pageNum * pagecnt;
-			console.log(`currentPage:${currentPage}, startIdx:${startIdx}, endIdx:${endIdx}`);
-			console.log(`filterData Len: ${filterData.length}`);
+			// console.log(`currentPage:${currentPage}, startIdx:${startIdx}, endIdx:${endIdx}`);
+			// console.log(`filterData Len: ${filterData.length}`);
 
 			if (endIdx > filterData.length) {
 				endIdx = filterData.length;
