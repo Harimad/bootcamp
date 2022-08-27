@@ -111,8 +111,12 @@
 			}
 			const response = await fetch(resource);
 			const resJson = await response.json();
-			console.log(resJson);
-			renderTable(resJson);
+
+			filterData = [...resJson];
+			renderTable(resJson.slice(0, pagecnt));
+			paging(filterData);
+
+			// renderTable(resJson)
 		}
 
 		function renderTable(data) {
@@ -186,13 +190,50 @@
 
 		// Add More functions
 
+		let totalPage = 0;
+		const pagecnt = 3;
+		let pageRange = [];
+		let currentPage = 1;
+
+		let filterData = [];
+
+
 		function sort() { }
 
 		function filter() { }
 
-		function paging() { }
+		function paging(data) {
+			totalPage = Math.ceil(data.length / pagecnt);
 
-		function renderPagination() { }
+			if (totalPage > 5) {
+				pageRange = [1, 2, 3, 4, 5];
+			} else {
+				pageRange = [];
+				for (let i = 1; i <= totalPage; i++) {
+					pageRange.push(i);
+				}
+			}
+			renderPagination();
+		}
+
+		function renderPagination() {
+			console.log(`pageRange: ${pageRange}, totalPage: ${totalPage}`);
+			const h = [];
+			if (pageRange[0] > 1) {
+				h.push(`<a href="javascript:prevPage();">&laquo</a>`);
+			}
+
+			for (const num of pageRange) {
+				h.push(`<a href='javascript:changePage(${num})'
+				class='${num === currentPage ? 'active' : ''}'>${num}</a>`);
+			}
+
+			if (pageRange[pageRange.length - 1] < totalPage) {
+				h.push(`<a href='javascript:nextPage();'>&raquo</a>`);
+			}
+
+			document.querySelector('#pagination').innerHTML = h.join('');
+		}
 
 		function prevPage() { }
 
