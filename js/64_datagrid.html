@@ -112,6 +112,7 @@
 			const response = await fetch(resource);
 			const resJson = await response.json();
 
+			customerData = resJson;
 			filterData = [...resJson];
 			renderTable(resJson.slice(0, pagecnt));
 			paging(filterData);
@@ -194,8 +195,6 @@
 		const pagecnt = 3;
 		let pageRange = [];
 		let currentPage = 1;
-
-		let filterData = [];
 
 		function paging(data) {
 			totalPage = Math.ceil(data.length / pagecnt);
@@ -310,12 +309,40 @@
 			renderPagination();
 		}
 
-		function filter() { }
+		let filterData = [];
+
+		function filter(filterKey) {
+			const filterValue = event.target.value.toLowerCase();
+			let endIdx = pagecnt;
+			if (filterValue !== "") {
+				filterData = filterData.filter(customer => {
+					customer[filterKey].toLowerCase().indexOf(filterValue) > -1
+				});
+
+				if (filterData.length < pagecnt) {
+					endIdx = filterData.length;
+				}
+			} else {
+				filterData = customerData;
+			}
+
+			currentPage = 1;
+			renderTable(filterData.slice(0, endIdx));
+			renderPagination();
+		}
 
 		window.addEventListener('load', () => {
 			document.querySelectorAll('th[data-sort-key]').forEach(th => {
 				th.addEventListener('click', () => {
 					sort(th.getAttribute('data-sort-key'));
+				})
+			})
+
+			document.querySelectorAll('input[data-filter-key]').forEach(input => {
+				input.addEventListener('keyup', () => {
+					if (event.keyCode === 13) {
+						filter(input.getAttribute('data-filter-key'));
+					}
 				})
 			})
 		})
