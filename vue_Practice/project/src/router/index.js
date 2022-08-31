@@ -135,6 +135,30 @@ const routes = [
       import(
         /* webpackChunkName: "databinding", webpackPrefetch:true */ '../views/3_extra/RenderingShowView.vue'
       )
+  },
+  {
+    path: '/extra/computed',
+    name: 'ComputedView',
+    component: () =>
+      import(
+        /* webpackChunkName: "databinding", webpackPrefetch:true */ '../views/3_extra/ComputedView.vue'
+      )
+  },
+  {
+    path: '/extra/watch',
+    name: 'WatchView',
+    component: () =>
+      import(
+        /* webpackChunkName: "databinding", webpackPrefetch:true */ '../views/3_extra/WatchView.vue'
+      )
+  },
+  {
+    path: '/extra/lifecycle',
+    name: 'LifecycleHookView',
+    component: () =>
+      import(
+        /* webpackChunkName: "databinding", webpackPrefetch:true */ '../views/3_extra/LifecycleHookView.vue'
+      )
   }
 ]
 

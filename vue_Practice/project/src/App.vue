@@ -17,7 +17,10 @@
     <router-link to="/event/change">Change</router-link> |
     <router-link to="/event/key">Key</router-link> | <br /><br />
     <router-link to="/extra/if">If</router-link> |
-    <router-link to="/extra/show">Show</router-link> |
+    <router-link to="/extra/show">Show</router-link> | <br /><br />
+    <router-link to="/extra/computed">Computed</router-link> |
+    <router-link to="/extra/watch">Watch</router-link> | <br /><br />
+    <router-link to="/extra/lifecycle">LifeCycleHook</router-link> |
   </nav>
   <router-view />
 </template>
