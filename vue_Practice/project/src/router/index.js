@@ -101,7 +101,7 @@ const routes = [
     name: 'EventClickView',
     component: () =>
       import(
-        /* webpackChunkName: "databinding", webpackPrefetch:true */ '../views/2_event/EventClickView.vue'
+        /* webpackChunkName: "event", webpackPrefetch:true */ '../views/2_event/EventClickView.vue'
       )
   },
   {
@@ -109,7 +109,7 @@ const routes = [
     name: 'EventChangeView',
     component: () =>
       import(
-        /* webpackChunkName: "databinding", webpackPrefetch:true */ '../views/2_event/EventChangeView.vue'
+        /* webpackChunkName: "event", webpackPrefetch:true */ '../views/2_event/EventChangeView.vue'
       )
   },
   {
@@ -117,7 +117,7 @@ const routes = [
     name: 'EventKeyView',
     component: () =>
       import(
-        /* webpackChunkName: "databinding", webpackPrefetch:true */ '../views/2_event/EventKeyView.vue'
+        /* webpackChunkName: "event", webpackPrefetch:true */ '../views/2_event/EventKeyView.vue'
       )
   },
   {
@@ -125,7 +125,7 @@ const routes = [
     name: 'RenderingIfView',
     component: () =>
       import(
-        /* webpackChunkName: "databinding", webpackPrefetch:true */ '../views/3_extra/RenderingIfView.vue'
+        /* webpackChunkName: "extra", webpackPrefetch:true */ '../views/3_extra/RenderingIfView.vue'
       )
   },
   {
@@ -133,7 +133,7 @@ const routes = [
     name: 'RenderingShowView',
     component: () =>
       import(
-        /* webpackChunkName: "databinding", webpackPrefetch:true */ '../views/3_extra/RenderingShowView.vue'
+        /* webpackChunkName: "extra", webpackPrefetch:true */ '../views/3_extra/RenderingShowView.vue'
       )
   },
   {
@@ -141,7 +141,7 @@ const routes = [
     name: 'ComputedView',
     component: () =>
       import(
-        /* webpackChunkName: "databinding", webpackPrefetch:true */ '../views/3_extra/ComputedView.vue'
+        /* webpackChunkName: "extra", webpackPrefetch:true */ '../views/3_extra/ComputedView.vue'
       )
   },
   {
@@ -149,7 +149,7 @@ const routes = [
     name: 'WatchView',
     component: () =>
       import(
-        /* webpackChunkName: "databinding", webpackPrefetch:true */ '../views/3_extra/WatchView.vue'
+        /* webpackChunkName: "extra", webpackPrefetch:true */ '../views/3_extra/WatchView.vue'
       )
   },
   {
@@ -157,7 +157,23 @@ const routes = [
     name: 'LifecycleHookView',
     component: () =>
       import(
-        /* webpackChunkName: "databinding", webpackPrefetch:true */ '../views/3_extra/LifecycleHookView.vue'
+        /* webpackChunkName: "extra", webpackPrefetch:true */ '../views/3_extra/LifecycleHookView.vue'
+      )
+  },
+  {
+    path: '/reuse/page',
+    name: 'PageView',
+    component: () =>
+      import(
+        /* webpackChunkName: "reuse", webpackPrefetch:true */ '../views/4_reuse/PageView.vue'
+      )
+  },
+  {
+    path: '/reuse/parent',
+    name: 'ParentView',
+    component: () =>
+      import(
+        /* webpackChunkName: "reuse", webpackPrefetch:true */ '../views/4_reuse/ParentView.vue'
       )
   }
 ]

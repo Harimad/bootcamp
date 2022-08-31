@@ -21,6 +21,9 @@
     <router-link to="/extra/computed">Computed</router-link> |
     <router-link to="/extra/watch">Watch</router-link> | <br /><br />
     <router-link to="/extra/lifecycle">LifeCycleHook</router-link> |
+    <br /><br />
+    <router-link to="/reuse/page">Page</router-link> |
+    <router-link to="/reuse/parent">Parent</router-link> |
   </nav>
   <router-view />
 </template>
