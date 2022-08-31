@@ -1,6 +1,7 @@
 <template>
   <div>
-    <page-title title="고객목록" />
+    <page-title title="고객목록" class="container" />
+    <button class="btn btn-primary">클릭</button>
   </div>
 </template>
 <script>
