@@ -15,7 +15,9 @@
     <br /><br />
     <router-link to="/event/click">Click</router-link> |
     <router-link to="/event/change">Change</router-link> |
-    <router-link to="/event/key">Key</router-link> |
+    <router-link to="/event/key">Key</router-link> | <br /><br />
+    <router-link to="/extra/if">If</router-link> |
+    <router-link to="/extra/show">Show</router-link> |
   </nav>
   <router-view />
 </template>
