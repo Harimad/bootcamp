@@ -25,6 +25,7 @@
     <router-link to="/reuse/page">Page</router-link> |
     <router-link to="/reuse/parent">Parent</router-link> |
     <router-link to="/reuse/list">List</router-link> |
+    <router-link to="/reuse/slot">Slot</router-link> |
   </nav>
   <router-view />
 </template>
