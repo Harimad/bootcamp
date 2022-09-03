@@ -85,6 +85,7 @@
           <a class="nav-link" @click="goToMenu('/reuse/parent')">Parent</a>
           <a class="nav-link" @click="goToMenu('/reuse/list')">List</a>
           <a class="nav-link" @click="goToMenu('/reuse/slot')">Slot</a>
+          <a class="nav-link" @click="goToMenu('/advanced/provide')">Provide</a>
         </div>
       </div>
     </div>
