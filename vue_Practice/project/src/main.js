@@ -10,4 +10,50 @@ import 'bootstrap/dist/js/bootstrap.min.js'
 const app = createApp(App)
 app.use(store)
 app.use(router)
-app.component('page-title', PageTitle).mount('#app')
+app.component('page-title', PageTitle)
+
+app.directive('focus', {
+  mounted(el, binding) {
+    console.log(el)
+    el.focus()
+  }
+})
+
+app.directive('lowercase', {
+  mounted(el) {
+    el.addEventListener('input', (event) => {
+      console.log(event.target.value)
+      event.target.value = event.target.value.toLowerCase()
+    })
+  }
+})
+
+app.directive('uppercase', {
+  mounted(el) {
+    el.addEventListener('input', (event) => {
+      console.log(event.target.value)
+      event.target.value = event.target.value.toUpperCase()
+    })
+  }
+})
+
+app.directive('number', {
+  mounted(el) {
+    el.addEventListener('input', (event) => {
+      event.target.value = event.target.value.replace(/\D/g, '')
+    })
+  }
+})
+
+app.directive('korean', {
+  mounted(el) {
+    el.addEventListener('input', (event) => {
+      event.target.value = event.target.value.replace(
+        /[^ㄱ-ㅎ|ㅏ-ㅣ|가-힣]/g,
+        ''
+      )
+    })
+  }
+})
+
+app.mount('#app')
