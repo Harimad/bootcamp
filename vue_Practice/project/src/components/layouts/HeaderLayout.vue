@@ -43,7 +43,7 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-          <a
+          <!-- <a
             class="nav-link"
             :class="{ active: $route.path === '/' }"
             aria-current="page"
@@ -84,11 +84,12 @@
           <a class="nav-link" @click="goToMenu('/reuse/page')">Page</a>
           <a class="nav-link" @click="goToMenu('/reuse/parent')">Parent</a>
           <a class="nav-link" @click="goToMenu('/reuse/list')">List</a>
-          <a class="nav-link" @click="goToMenu('/reuse/slot')">Slot</a>
+          <a class="nav-link" @click="goToMenu('/reuse/slot')">Slot</a> -->
           <a class="nav-link" @click="goToMenu('/advanced/provide')">Provide</a>
           <a class="nav-link" @click="goToMenu('/advanced/customDirective')"
             >CustomDirective</a
           >
+          <a class="nav-link" @click="goToMenu('/advanced/mixIn')">Mixin</a>
         </div>
       </div>
     </div>
