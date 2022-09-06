@@ -90,6 +90,7 @@
             >CustomDirective</a
           >
           <a class="nav-link" @click="goToMenu('/advanced/mixIn')">Mixin</a>
+          <a class="nav-link" @click="goToMenu('/advanced/plugIn')">Plugin</a>
         </div>
       </div>
     </div>

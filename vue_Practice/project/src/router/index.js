@@ -215,6 +215,14 @@ const routes = [
       import(
         /* webpackChunkName: "advanced", webpackPrefetch:true */ '../views/5_advanced/MixinView.vue'
       )
+  },
+  {
+    path: '/advanced/plugIn',
+    name: 'PluginView',
+    component: () =>
+      import(
+        /* webpackChunkName: "advanced", webpackPrefetch:true */ '../views/5_advanced/PluginView.vue'
+      )
   }
 ]
 
