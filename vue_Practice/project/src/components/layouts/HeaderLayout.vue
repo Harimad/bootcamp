@@ -91,6 +91,8 @@
           >
           <a class="nav-link" @click="goToMenu('/advanced/mixIn')">Mixin</a>
           <a class="nav-link" @click="goToMenu('/advanced/plugIn')">Plugin</a>
+          <a class="nav-link" @click="goToMenu('/vuex/vuex')">Vuex</a>
+          <a class="nav-link" @click="goToMenu('/vuex/login')">Login</a>
         </div>
       </div>
     </div>

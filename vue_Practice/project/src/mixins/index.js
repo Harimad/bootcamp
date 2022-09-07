@@ -1,4 +1,3 @@
-import { isGloballyWhitelisted } from '@vue/shared'
 import axios from 'axios'
 
 export default {
@@ -64,12 +63,12 @@ export default {
         format = format.substring(0, format.length - 1)
       }
 
-      let groupingSeparator = '' //소수 3자리마다 구분자 기호
-      let decimalSeparator = '' //소수점 구분자 기호
+      let groupingSeparator = '' // 소수 3자리마다 구분자 기호
+      let decimalSeparator = '' // 소수점 구분자 기호
       let maxFractionDigits = 0 // 소수점 몇 자리까지 표기할건지
 
       if (format.indexOf('.') === -1) {
-        //#,###
+        // #,###
         groupingSeparator = ','
       } else if (format.indexOf(',') === -1) {
         groupingSeparator = '.'
