@@ -93,6 +93,9 @@
           <a class="nav-link" @click="goToMenu('/advanced/plugIn')">Plugin</a>
           <a class="nav-link" @click="goToMenu('/vuex/vuex')">Vuex</a>
           <a class="nav-link" @click="goToMenu('/vuex/login')">Login</a>
+          <a class="nav-link" @click="goToMenu('/composition/setup')">Setup</a>
+          <a class="nav-link" @click="goToMenu('/composition/ref')">Ref</a>
+          <a class="nav-link" @click="goToMenu('/composition/func')">Func</a>
         </div>
       </div>
     </div>
