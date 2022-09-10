@@ -99,6 +99,7 @@
           <a class="nav-link" @click="goToMenu('/login/kakao')">Kakao</a>
           <a class="nav-link" @click="goToMenu('/login/main')">Main</a>
           <a class="nav-link" @click="goToMenu('/login/naver')">Naver</a>
+          <a class="nav-link" @click="goToMenu('/module/postcode')">PostCode</a>
         </div>
       </div>
     </div>

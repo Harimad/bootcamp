@@ -287,6 +287,14 @@ const routes = [
       import(
         /* webpackChunkName: "login", webpackPrefetch:true */ '../views/8_login/NaverLoginView.vue'
       )
+  },
+  {
+    path: '/module/postcode',
+    name: 'DaumPostcodeView',
+    component: () =>
+      import(
+        /* webpackChunkName: "module", webpackPrefetch:true */ '../views/9_module/DaumPostcodeView.vue'
+      )
   }
 ]
 
