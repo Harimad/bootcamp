@@ -279,6 +279,14 @@ const routes = [
       import(
         /* webpackChunkName: "login", webpackPrefetch:true */ '../views/8_login/MainView.vue'
       )
+  },
+  {
+    path: '/login/naver',
+    name: 'NaverLoginView',
+    component: () =>
+      import(
+        /* webpackChunkName: "login", webpackPrefetch:true */ '../views/8_login/NaverLoginView.vue'
+      )
   }
 ]
 

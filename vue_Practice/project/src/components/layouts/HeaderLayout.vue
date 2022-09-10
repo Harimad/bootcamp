@@ -98,6 +98,7 @@
           <a class="nav-link" @click="goToMenu('/composition/func')">Func</a>
           <a class="nav-link" @click="goToMenu('/login/kakao')">Kakao</a>
           <a class="nav-link" @click="goToMenu('/login/main')">Main</a>
+          <a class="nav-link" @click="goToMenu('/login/naver')">Naver</a>
         </div>
       </div>
     </div>

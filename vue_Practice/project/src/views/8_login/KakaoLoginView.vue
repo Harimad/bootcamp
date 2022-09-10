@@ -63,7 +63,7 @@ export default {
       }
 
       window.Kakao.Auth.logout((res) => {
-        //로그아웃
+        // 로그아웃
         console.log('access token', window.Kakao.Auth.getAccessToken())
         console.log('logout', res)
       })
