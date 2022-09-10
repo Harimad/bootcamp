@@ -80,3 +80,4 @@ app.directive('korean', {
 })
 
 app.mount('#app')
+window.Kakao.init('9b0e0287865ff95a397db1c0d772f73b')

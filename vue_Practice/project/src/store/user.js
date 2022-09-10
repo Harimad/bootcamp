@@ -19,6 +19,13 @@ export const user = {
       } else {
         return false
       }
+    },
+    isKakaoLogin() {
+      if (window.Kakao.Auth.getAccessToken()) {
+        return true
+      } else {
+        return false
+      }
     }
   },
   mutations: {

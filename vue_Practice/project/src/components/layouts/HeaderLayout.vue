@@ -85,17 +85,19 @@
           <a class="nav-link" @click="goToMenu('/reuse/parent')">Parent</a>
           <a class="nav-link" @click="goToMenu('/reuse/list')">List</a>
           <a class="nav-link" @click="goToMenu('/reuse/slot')">Slot</a> -->
-          <a class="nav-link" @click="goToMenu('/advanced/provide')">Provide</a>
-          <a class="nav-link" @click="goToMenu('/advanced/customDirective')"
+          <!-- <a class="nav-link" @click="goToMenu('/advanced/provide')">Provide</a> -->
+          <!-- <a class="nav-link" @click="goToMenu('/advanced/customDirective')"
             >CustomDirective</a
-          >
-          <a class="nav-link" @click="goToMenu('/advanced/mixIn')">Mixin</a>
-          <a class="nav-link" @click="goToMenu('/advanced/plugIn')">Plugin</a>
-          <a class="nav-link" @click="goToMenu('/vuex/vuex')">Vuex</a>
-          <a class="nav-link" @click="goToMenu('/vuex/login')">Login</a>
-          <a class="nav-link" @click="goToMenu('/composition/setup')">Setup</a>
+          > -->
+          <!-- <a class="nav-link" @click="goToMenu('/advanced/mixIn')">Mixin</a> -->
+          <!-- <a class="nav-link" @click="goToMenu('/advanced/plugIn')">Plugin</a> -->
+          <!-- <a class="nav-link" @click="goToMenu('/vuex/vuex')">Vuex</a> -->
+          <!-- <a class="nav-link" @click="goToMenu('/vuex/login')">Login</a> -->
+          <!-- <a class="nav-link" @click="goToMenu('/composition/setup')">Setup</a> -->
           <a class="nav-link" @click="goToMenu('/composition/ref')">Ref</a>
           <a class="nav-link" @click="goToMenu('/composition/func')">Func</a>
+          <a class="nav-link" @click="goToMenu('/login/kakao')">Kakao</a>
+          <a class="nav-link" @click="goToMenu('/login/main')">Main</a>
         </div>
       </div>
     </div>
