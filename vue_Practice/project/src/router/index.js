@@ -295,6 +295,14 @@ const routes = [
       import(
         /* webpackChunkName: "module", webpackPrefetch:true */ '../views/9_module/DaumPostcodeView.vue'
       )
+  },
+  {
+    path: '/module/map',
+    name: 'KakaoMapView',
+    component: () =>
+      import(
+        /* webpackChunkName: "module", webpackPrefetch:true */ '../views/9_module/KakaoMapView.vue'
+      )
   }
 ]
 

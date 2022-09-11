@@ -100,6 +100,7 @@
           <a class="nav-link" @click="goToMenu('/login/main')">Main</a>
           <a class="nav-link" @click="goToMenu('/login/naver')">Naver</a>
           <a class="nav-link" @click="goToMenu('/module/postcode')">PostCode</a>
+          <a class="nav-link" @click="goToMenu('/module/map')">Map</a>
         </div>
       </div>
     </div>
