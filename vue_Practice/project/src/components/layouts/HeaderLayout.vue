@@ -94,13 +94,15 @@
           <!-- <a class="nav-link" @click="goToMenu('/vuex/vuex')">Vuex</a> -->
           <!-- <a class="nav-link" @click="goToMenu('/vuex/login')">Login</a> -->
           <!-- <a class="nav-link" @click="goToMenu('/composition/setup')">Setup</a> -->
-          <a class="nav-link" @click="goToMenu('/composition/ref')">Ref</a>
-          <a class="nav-link" @click="goToMenu('/composition/func')">Func</a>
-          <a class="nav-link" @click="goToMenu('/login/kakao')">Kakao</a>
-          <a class="nav-link" @click="goToMenu('/login/main')">Main</a>
-          <a class="nav-link" @click="goToMenu('/login/naver')">Naver</a>
+          <!-- <a class="nav-link" @click="goToMenu('/composition/ref')">Ref</a> -->
+          <!-- <a class="nav-link" @click="goToMenu('/composition/func')">Func</a> -->
+          <!-- <a class="nav-link" @click="goToMenu('/login/kakao')">Kakao</a> -->
+          <!-- <a class="nav-link" @click="goToMenu('/login/main')">Main</a> -->
+          <!-- <a class="nav-link" @click="goToMenu('/login/naver')">Naver</a> -->
           <a class="nav-link" @click="goToMenu('/module/postcode')">PostCode</a>
           <a class="nav-link" @click="goToMenu('/module/map')">Map</a>
+          <a class="nav-link" @click="goToMenu('/module/map')">Map</a>
+          <a class="nav-link" @click="goToMenu('/module/font')">Font</a>
         </div>
       </div>
     </div>
