@@ -13,6 +13,8 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { faUserSecret, faUserClock } from '@fortawesome/free-solid-svg-icons'
 import VueSweetalert2 from 'vue-sweetalert2'
 import 'sweetalert2/dist/sweetalert2.min.css'
+import VueLoading from 'vue-loading-overlay'
+import 'vue-loading-overlay/dist/vue-loading.css'
 
 library.add(faUserSecret)
 library.add(faUserClock)
@@ -47,6 +49,7 @@ app.component('page-title', PageTitle)
 app.component('font-awesome-icon', FontAwesomeIcon)
 app.use(i18nPlugin, i18nStrings)
 app.use(VueSweetalert2)
+app.use(VueLoading)
 
 app.directive('focus', {
   mounted(el, binding) {

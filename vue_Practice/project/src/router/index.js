@@ -327,6 +327,14 @@ const routes = [
       import(
         /* webpackChunkName: "module", webpackPrefetch:true */ '../views/9_module/Sweetalert2View.vue'
       )
+  },
+  {
+    path: '/module/loading',
+    name: 'LoadingOverlayView',
+    component: () =>
+      import(
+        /* webpackChunkName: "module", webpackPrefetch:true */ '../views/9_module/LoadingOverlayView.vue'
+      )
   }
 ]
 
