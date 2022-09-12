@@ -103,6 +103,7 @@
           <a class="nav-link" @click="goToMenu('/module/map')">Map</a>
           <a class="nav-link" @click="goToMenu('/module/map')">Map</a>
           <a class="nav-link" @click="goToMenu('/module/font')">Font</a>
+          <a class="nav-link" @click="goToMenu('/module/calendar')">Calendar</a>
         </div>
       </div>
     </div>
