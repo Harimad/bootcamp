@@ -106,6 +106,7 @@
           <a class="nav-link" @click="goToMenu('/module/calendar')">Calendar</a>
           <a class="nav-link" @click="goToMenu('/module/alert')">Sweetalert2</a>
           <a class="nav-link" @click="goToMenu('/module/loading')">Loading</a>
+          <a class="nav-link" @click="goToMenu('/module/table')">Table</a>
         </div>
       </div>
     </div>
