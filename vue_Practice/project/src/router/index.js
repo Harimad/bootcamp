@@ -343,6 +343,46 @@ const routes = [
       import(
         /* webpackChunkName: "module", webpackPrefetch:true */ '../views/9_module/VueGoodTableView.vue'
       )
+  },
+  {
+    path: '/chart/bar',
+    name: 'BarChartView',
+    component: () =>
+      import(
+        /* webpackChunkName: "chart", webpackPrefetch:true */ '../views/10_chart/BarChartView.vue'
+      )
+  },
+  {
+    path: '/chart/line',
+    name: 'LineChartView',
+    component: () =>
+      import(
+        /* webpackChunkName: "chart", webpackPrefetch:true */ '../views/10_chart/LineChartView.vue'
+      )
+  },
+  {
+    path: '/chart/donut',
+    name: 'DonutChartView',
+    component: () =>
+      import(
+        /* webpackChunkName: "chart", webpackPrefetch:true */ '../views/10_chart/DonutChartView.vue'
+      )
+  },
+  {
+    path: '/chart/bar2',
+    name: 'BarChartView2',
+    component: () =>
+      import(
+        /* webpackChunkName: "chart", webpackPrefetch:true */ '../views/10_chart/BarChartView2.vue'
+      )
+  },
+  {
+    path: '/chart/column',
+    name: 'ColumnChartView',
+    component: () =>
+      import(
+        /* webpackChunkName: "chart", webpackPrefetch:true */ '../views/10_chart/ColumnChartView.vue'
+      )
   }
 ]
 

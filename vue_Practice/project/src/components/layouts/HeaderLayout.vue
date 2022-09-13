@@ -99,14 +99,19 @@
           <!-- <a class="nav-link" @click="goToMenu('/login/kakao')">Kakao</a> -->
           <!-- <a class="nav-link" @click="goToMenu('/login/main')">Main</a> -->
           <!-- <a class="nav-link" @click="goToMenu('/login/naver')">Naver</a> -->
-          <a class="nav-link" @click="goToMenu('/module/postcode')">PostCode</a>
-          <a class="nav-link" @click="goToMenu('/module/map')">Map</a>
-          <a class="nav-link" @click="goToMenu('/module/map')">Map</a>
-          <a class="nav-link" @click="goToMenu('/module/font')">Font</a>
-          <a class="nav-link" @click="goToMenu('/module/calendar')">Calendar</a>
-          <a class="nav-link" @click="goToMenu('/module/alert')">Sweetalert2</a>
-          <a class="nav-link" @click="goToMenu('/module/loading')">Loading</a>
-          <a class="nav-link" @click="goToMenu('/module/table')">Table</a>
+          <!-- <a class="nav-link" @click="goToMenu('/module/postcode')">PostCode</a> -->
+          <!-- <a class="nav-link" @click="goToMenu('/module/map')">Map</a> -->
+          <!-- <a class="nav-link" @click="goToMenu('/module/map')">Map</a> -->
+          <!-- <a class="nav-link" @click="goToMenu('/module/font')">Font</a> -->
+          <!-- <a class="nav-link" @click="goToMenu('/module/calendar')">Calendar</a> -->
+          <!-- <a class="nav-link" @click="goToMenu('/module/alert')">Sweetalert2</a> -->
+          <!-- <a class="nav-link" @click="goToMenu('/module/loading')">Loading</a> -->
+          <!-- <a class="nav-link" @click="goToMenu('/module/table')">Table</a> -->
+          <a class="nav-link" @click="goToMenu('/chart/bar')">Bar</a>
+          <a class="nav-link" @click="goToMenu('/chart/line')">Line</a>
+          <a class="nav-link" @click="goToMenu('/chart/donut')">Donut</a>
+          <a class="nav-link" @click="goToMenu('/chart/bar2')">Bar2</a>
+          <a class="nav-link" @click="goToMenu('/chart/column')">Column</a>
         </div>
       </div>
     </div>
