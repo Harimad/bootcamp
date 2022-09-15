@@ -107,11 +107,14 @@
           <!-- <a class="nav-link" @click="goToMenu('/module/alert')">Sweetalert2</a> -->
           <!-- <a class="nav-link" @click="goToMenu('/module/loading')">Loading</a> -->
           <!-- <a class="nav-link" @click="goToMenu('/module/table')">Table</a> -->
-          <a class="nav-link" @click="goToMenu('/chart/bar')">Bar</a>
-          <a class="nav-link" @click="goToMenu('/chart/line')">Line</a>
-          <a class="nav-link" @click="goToMenu('/chart/donut')">Donut</a>
-          <a class="nav-link" @click="goToMenu('/chart/bar2')">Bar2</a>
-          <a class="nav-link" @click="goToMenu('/chart/column')">Column</a>
+          <!-- <a class="nav-link" @click="goToMenu('/chart/bar')">Bar</a> -->
+          <!-- <a class="nav-link" @click="goToMenu('/chart/line')">Line</a> -->
+          <!-- <a class="nav-link" @click="goToMenu('/chart/donut')">Donut</a> -->
+          <!-- <a class="nav-link" @click="goToMenu('/chart/bar2')">Bar2</a> -->
+          <!-- <a class="nav-link" @click="goToMenu('/chart/column')">Column</a> -->
+          <a class="nav-link" @click="goToMenu('/template/p1/single')"
+            >Single</a
+          >
         </div>
       </div>
     </div>

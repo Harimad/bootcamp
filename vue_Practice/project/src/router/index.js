@@ -383,6 +383,14 @@ const routes = [
       import(
         /* webpackChunkName: "chart", webpackPrefetch:true */ '../views/10_chart/ColumnChartView.vue'
       )
+  },
+  {
+    path: '/template/p1/single',
+    name: 'SingleViewEditView',
+    component: () =>
+      import(
+        /* webpackChunkName: "template", webpackPrefetch:true */ '../views/11_template/p1/SingleViewEditView.vue'
+      )
   }
 ]
 
