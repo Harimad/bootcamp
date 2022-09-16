@@ -20,7 +20,7 @@
     {
       "id": "6301e17c8c7fd36d631aad28",
       "age": 25,
-      "name": "Lewis Hughes123",
+      "name": "Lewis Hughes333",
       "gender": "male",
       "company": "DOGTOWN",
       "email": "lewishughes@dogtown.com",
@@ -31,24 +31,10 @@
       "detailAddress": "102호"
     },
     {
-      "id": "6301e17cb6e688961cb0725b",
-      "age": 24,
-      "name": "Booth Paul",
-      "gender": "male",
-      "company": "POSHOME",
-      "email": "boothpaul@poshome.com",
-      "phone": "+1 (958) 539-3520",
-      "address": "956 Lenox Road, Hilltop, Marshall Islands, 9164"
+      "id": "6301e17cb6e688961cb0725b"
     },
     {
-      "id": "6309d5a87162f315bc4a6d44",
-      "age": 35,
-      "name": "Joan Atkins",
-      "gender": "female",
-      "company": "PYRAMAX",
-      "email": "joanatkins@pyramax.com",
-      "phone": "+1 (965) 409-3035",
-      "address": "442 Montgomery Place, Jugtown, Vermont, 3984"
+      "id": "6309d5a87162f315bc4a6d44"
     },
     {
       "id": "6309d5a8ee5efd82929e52fc",

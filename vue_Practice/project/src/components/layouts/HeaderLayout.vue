@@ -115,6 +115,9 @@
           <a class="nav-link" @click="goToMenu('/template/p1/single')"
             >Single</a
           >
+          <a class="nav-link" @click="goToMenu('/template/p2/multiple')"
+            >Multiple</a
+          >
         </div>
       </div>
     </div>
