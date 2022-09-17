@@ -399,6 +399,38 @@ const routes = [
       import(
         /* webpackChunkName: "template", webpackPrefetch:true */ '../views/11_template/p2/MultipleEditView.vue'
       )
+  },
+  {
+    path: '/template/p3/list',
+    name: 'ListToDetailView',
+    component: () =>
+      import(
+        /* webpackChunkName: "template", webpackPrefetch:true */ '../views/11_template/p3/ListToDetailView.vue'
+      )
+  },
+  {
+    path: '/template/p3/detail',
+    name: 'DetailView',
+    component: () =>
+      import(
+        /* webpackChunkName: "template", webpackPrefetch:true */ '../views/11_template/p3/DetailView.vue'
+      )
+  },
+  {
+    path: '/template/p3/edit',
+    name: 'EditView',
+    component: () =>
+      import(
+        /* webpackChunkName: "template", webpackPrefetch:true */ '../views/11_template/p3/EditView.vue'
+      )
+  },
+  {
+    path: '/template/p3/create',
+    name: 'CreateView',
+    component: () =>
+      import(
+        /* webpackChunkName: "template", webpackPrefetch:true */ '../views/11_template/p3/CreateView.vue'
+      )
   }
 ]
 

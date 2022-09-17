@@ -112,11 +112,25 @@
           <!-- <a class="nav-link" @click="goToMenu('/chart/donut')">Donut</a> -->
           <!-- <a class="nav-link" @click="goToMenu('/chart/bar2')">Bar2</a> -->
           <!-- <a class="nav-link" @click="goToMenu('/chart/column')">Column</a> -->
-          <a class="nav-link" @click="goToMenu('/template/p1/single')"
+          <!-- <a class="nav-link" @click="goToMenu('/template/p1/single')"
             >Single</a
           >
           <a class="nav-link" @click="goToMenu('/template/p2/multiple')"
             >Multiple</a
+          > -->
+          <a
+            class="nav-link"
+            :class="{ active: $route.path === '/template/p3/list' }"
+            aria-current="page"
+            @click="goToMenu('/template/p3/list')"
+            >List</a
+          >
+          <a
+            class="nav-link"
+            :class="{ active: $route.path === '/template/p3/detail' }"
+            aria-current="page"
+            @click="goToMenu('/template/p3/detail')"
+            >Detail</a
           >
         </div>
       </div>
