@@ -132,6 +132,20 @@
             @click="goToMenu('/template/p3/detail')"
             >Detail</a
           >
+          <a
+            class="nav-link"
+            :class="{ active: $route.path === '/template/p4/master' }"
+            aria-current="page"
+            @click="goToMenu('/template/p4/master')"
+            >Master</a
+          >
+          <a
+            class="nav-link"
+            :class="{ active: $route.path === '/template/p4/master2' }"
+            aria-current="page"
+            @click="goToMenu('/template/p4/master2')"
+            >MasterModal</a
+          >
         </div>
       </div>
     </div>

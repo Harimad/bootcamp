@@ -431,6 +431,22 @@ const routes = [
       import(
         /* webpackChunkName: "template", webpackPrefetch:true */ '../views/11_template/p3/CreateView.vue'
       )
+  },
+  {
+    path: '/template/p4/master',
+    name: 'MasterDetailView',
+    component: () =>
+      import(
+        /* webpackChunkName: "template", webpackPrefetch:true */ '../views/11_template/p4/MasterDetailView.vue'
+      )
+  },
+  {
+    path: '/template/p4/master2',
+    name: 'MasterDetailModalView',
+    component: () =>
+      import(
+        /* webpackChunkName: "template", webpackPrefetch:true */ '../views/11_template/p4/MasterDetailModalView.vue'
+      )
   }
 ]
 
