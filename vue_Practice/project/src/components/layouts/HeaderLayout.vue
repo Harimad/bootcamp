@@ -112,12 +112,20 @@
           <!-- <a class="nav-link" @click="goToMenu('/chart/donut')">Donut</a> -->
           <!-- <a class="nav-link" @click="goToMenu('/chart/bar2')">Bar2</a> -->
           <!-- <a class="nav-link" @click="goToMenu('/chart/column')">Column</a> -->
-          <!-- <a class="nav-link" @click="goToMenu('/template/p1/single')"
+          <a
+            class="nav-link"
+            :class="{ active: $route.path === '/template/p1/single' }"
+            aria-current="page"
+            @click="goToMenu('/template/p1/single')"
             >Single</a
           >
-          <a class="nav-link" @click="goToMenu('/template/p2/multiple')"
+          <a
+            class="nav-link"
+            :class="{ active: $route.path === '/template/p2/multiple' }"
+            aria-current="page"
+            @click="goToMenu('/template/p2/multiple')"
             >Multiple</a
-          > -->
+          >
           <a
             class="nav-link"
             :class="{ active: $route.path === '/template/p3/list' }"
@@ -145,6 +153,13 @@
             aria-current="page"
             @click="goToMenu('/template/p4/master2')"
             >MasterModal</a
+          >
+          <a
+            class="nav-link"
+            :class="{ active: $route.path === '/template/p5/shuttle' }"
+            aria-current="page"
+            @click="goToMenu('/template/p5/shuttle')"
+            >Shuttle</a
           >
         </div>
       </div>

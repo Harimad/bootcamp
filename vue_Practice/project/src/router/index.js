@@ -447,6 +447,14 @@ const routes = [
       import(
         /* webpackChunkName: "template", webpackPrefetch:true */ '../views/11_template/p4/MasterDetailModalView.vue'
       )
+  },
+  {
+    path: '/template/p5/shuttle',
+    name: 'ShuttleView',
+    component: () =>
+      import(
+        /* webpackChunkName: "template", webpackPrefetch:true */ '../views/11_template/p5/ShuttleView.vue'
+      )
   }
 ]
 
